@@ -32,8 +32,8 @@
             this.LAddPassword = new System.Windows.Forms.Label();
             this.TBPassword = new System.Windows.Forms.TextBox();
             this.TBLogin = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.LLoginInPassword = new System.Windows.Forms.Label();
+            this.LPasswordInPassword = new System.Windows.Forms.Label();
             this.BAddNewPassword = new System.Windows.Forms.Button();
             this.TBShowPassword = new System.Windows.Forms.Button();
             this.TBHidePassword = new System.Windows.Forms.Button();
@@ -80,25 +80,25 @@
             this.TBLogin.Size = new System.Drawing.Size(100, 20);
             this.TBLogin.TabIndex = 3;
             // 
-            // label2
+            // LLoginInPassword
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(13, 49);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 20);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Login";
+            this.LLoginInPassword.AutoSize = true;
+            this.LLoginInPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.LLoginInPassword.Location = new System.Drawing.Point(13, 49);
+            this.LLoginInPassword.Name = "LLoginInPassword";
+            this.LLoginInPassword.Size = new System.Drawing.Size(48, 20);
+            this.LLoginInPassword.TabIndex = 4;
+            this.LLoginInPassword.Text = "Login";
             // 
-            // label3
+            // LPasswordInPassword
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(13, 69);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 20);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Haslo";
+            this.LPasswordInPassword.AutoSize = true;
+            this.LPasswordInPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.LPasswordInPassword.Location = new System.Drawing.Point(13, 69);
+            this.LPasswordInPassword.Name = "LPasswordInPassword";
+            this.LPasswordInPassword.Size = new System.Drawing.Size(50, 20);
+            this.LPasswordInPassword.TabIndex = 5;
+            this.LPasswordInPassword.Text = "Haslo";
             // 
             // BAddNewPassword
             // 
@@ -205,8 +205,8 @@
             this.Controls.Add(this.TBHidePassword);
             this.Controls.Add(this.TBShowPassword);
             this.Controls.Add(this.BAddNewPassword);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.LPasswordInPassword);
+            this.Controls.Add(this.LLoginInPassword);
             this.Controls.Add(this.TBLogin);
             this.Controls.Add(this.TBPassword);
             this.Controls.Add(this.LAddPassword);
@@ -228,8 +228,8 @@
         private System.Windows.Forms.Label LAddPassword;
         private System.Windows.Forms.TextBox TBPassword;
         private System.Windows.Forms.TextBox TBLogin;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label LLoginInPassword;
+        private System.Windows.Forms.Label LPasswordInPassword;
         private System.Windows.Forms.Button BAddNewPassword;
         private System.Windows.Forms.Button TBShowPassword;
         private System.Windows.Forms.Button TBHidePassword;

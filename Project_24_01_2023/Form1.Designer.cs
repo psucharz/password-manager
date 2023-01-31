@@ -51,7 +51,7 @@
             this.LMakeSupplementaryQuestion = new System.Windows.Forms.Label();
             this.TBMakeAnserw = new System.Windows.Forms.TextBox();
             this.LMakeAnserwQuestion = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.BRemind = new System.Windows.Forms.Button();
             this.PBUser = new System.Windows.Forms.PictureBox();
             this.LUseSupplementaryQuestion = new System.Windows.Forms.Label();
             this.LUseAnserw = new System.Windows.Forms.Label();
@@ -270,14 +270,14 @@
             this.LMakeAnserwQuestion.TabIndex = 24;
             this.LMakeAnserwQuestion.Text = "Odpowiedź";
             // 
-            // button1
+            // BRemind
             // 
-            this.button1.Location = new System.Drawing.Point(12, 306);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(106, 23);
-            this.button1.TabIndex = 26;
-            this.button1.Text = "Przypomnij Hasło";
-            this.button1.UseVisualStyleBackColor = true;
+            this.BRemind.Location = new System.Drawing.Point(12, 306);
+            this.BRemind.Name = "BRemind";
+            this.BRemind.Size = new System.Drawing.Size(106, 23);
+            this.BRemind.TabIndex = 26;
+            this.BRemind.Text = "Przypomnij Hasło";
+            this.BRemind.UseVisualStyleBackColor = true;
             // 
             // PBUser
             // 
@@ -394,7 +394,7 @@
             this.Controls.Add(this.LUseAnserw);
             this.Controls.Add(this.LUseSupplementaryQuestion);
             this.Controls.Add(this.PBUser);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.BRemind);
             this.Controls.Add(this.LMakeAnserwQuestion);
             this.Controls.Add(this.TBMakeAnserw);
             this.Controls.Add(this.LMakeSupplementaryQuestion);
@@ -455,7 +455,7 @@
         private System.Windows.Forms.Label LMakeSupplementaryQuestion;
         private System.Windows.Forms.TextBox TBMakeAnserw;
         private System.Windows.Forms.Label LMakeAnserwQuestion;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BRemind;
         private System.Windows.Forms.PictureBox PBUser;
         private System.Windows.Forms.Label LUseSupplementaryQuestion;
         private System.Windows.Forms.Label LUseAnserw;
