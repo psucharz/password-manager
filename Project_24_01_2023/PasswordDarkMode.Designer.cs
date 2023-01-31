@@ -45,6 +45,12 @@
             this.DarkModeinPasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DarkBlackModeinPasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DarkLightModeinPasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.DarkLNote = new System.Windows.Forms.Label();
+            this.DarkLWebSide = new System.Windows.Forms.Label();
+            this.DarkTBWebSide = new System.Windows.Forms.TextBox();
+            this.DarkTBNote = new System.Windows.Forms.TextBox();
+            this.DarkLMail = new System.Windows.Forms.Label();
+            this.DarkTBMail = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,17 +77,17 @@
             // DarkTBPassword
             // 
             this.DarkTBPassword.BackColor = System.Drawing.Color.DarkGray;
-            this.DarkTBPassword.Location = new System.Drawing.Point(67, 69);
+            this.DarkTBPassword.Location = new System.Drawing.Point(103, 69);
             this.DarkTBPassword.Name = "DarkTBPassword";
-            this.DarkTBPassword.Size = new System.Drawing.Size(100, 20);
+            this.DarkTBPassword.Size = new System.Drawing.Size(263, 20);
             this.DarkTBPassword.TabIndex = 2;
             // 
             // DarkTBLogin
             // 
             this.DarkTBLogin.BackColor = System.Drawing.Color.DarkGray;
-            this.DarkTBLogin.Location = new System.Drawing.Point(67, 52);
+            this.DarkTBLogin.Location = new System.Drawing.Point(103, 49);
             this.DarkTBLogin.Name = "DarkTBLogin";
-            this.DarkTBLogin.Size = new System.Drawing.Size(100, 20);
+            this.DarkTBLogin.Size = new System.Drawing.Size(263, 20);
             this.DarkTBLogin.TabIndex = 3;
             // 
             // DarkLLoginInPassword
@@ -109,7 +115,7 @@
             // DarkBAddNewPassword
             // 
             this.DarkBAddNewPassword.BackColor = System.Drawing.Color.DarkGray;
-            this.DarkBAddNewPassword.Location = new System.Drawing.Point(17, 92);
+            this.DarkBAddNewPassword.Location = new System.Drawing.Point(17, 152);
             this.DarkBAddNewPassword.Name = "DarkBAddNewPassword";
             this.DarkBAddNewPassword.Size = new System.Drawing.Size(150, 23);
             this.DarkBAddNewPassword.TabIndex = 6;
@@ -150,7 +156,7 @@
             // 
             this.DarkCBPassword.BackColor = System.Drawing.Color.DarkGray;
             this.DarkCBPassword.FormattingEnabled = true;
-            this.DarkCBPassword.Location = new System.Drawing.Point(17, 121);
+            this.DarkCBPassword.Location = new System.Drawing.Point(17, 181);
             this.DarkCBPassword.Name = "DarkCBPassword";
             this.DarkCBPassword.Size = new System.Drawing.Size(150, 21);
             this.DarkCBPassword.TabIndex = 10;
@@ -158,7 +164,7 @@
             // DarkBDeletePassword
             // 
             this.DarkBDeletePassword.BackColor = System.Drawing.Color.DarkGray;
-            this.DarkBDeletePassword.Location = new System.Drawing.Point(17, 148);
+            this.DarkBDeletePassword.Location = new System.Drawing.Point(17, 208);
             this.DarkBDeletePassword.Name = "DarkBDeletePassword";
             this.DarkBDeletePassword.Size = new System.Drawing.Size(150, 23);
             this.DarkBDeletePassword.TabIndex = 11;
@@ -168,7 +174,7 @@
             // DarkBModyficatePassword
             // 
             this.DarkBModyficatePassword.BackColor = System.Drawing.Color.DarkGray;
-            this.DarkBModyficatePassword.Location = new System.Drawing.Point(17, 168);
+            this.DarkBModyficatePassword.Location = new System.Drawing.Point(17, 228);
             this.DarkBModyficatePassword.Name = "DarkBModyficatePassword";
             this.DarkBModyficatePassword.Size = new System.Drawing.Size(150, 23);
             this.DarkBModyficatePassword.TabIndex = 12;
@@ -198,14 +204,71 @@
             // DarkBlackModeinPasswordToolStripMenuItem
             // 
             this.DarkBlackModeinPasswordToolStripMenuItem.Name = "DarkBlackModeinPasswordToolStripMenuItem";
-            this.DarkBlackModeinPasswordToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.DarkBlackModeinPasswordToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
             this.DarkBlackModeinPasswordToolStripMenuItem.Text = "Ciemny";
             // 
             // DarkLightModeinPasswordToolStripMenuItem
             // 
             this.DarkLightModeinPasswordToolStripMenuItem.Name = "DarkLightModeinPasswordToolStripMenuItem";
-            this.DarkLightModeinPasswordToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.DarkLightModeinPasswordToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
             this.DarkLightModeinPasswordToolStripMenuItem.Text = "Jasny";
+            // 
+            // DarkLNote
+            // 
+            this.DarkLNote.AutoSize = true;
+            this.DarkLNote.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.DarkLNote.ForeColor = System.Drawing.Color.Cyan;
+            this.DarkLNote.Location = new System.Drawing.Point(13, 129);
+            this.DarkLNote.Name = "DarkLNote";
+            this.DarkLNote.Size = new System.Drawing.Size(84, 20);
+            this.DarkLNote.TabIndex = 17;
+            this.DarkLNote.Text = "Informacje";
+            // 
+            // DarkLWebSide
+            // 
+            this.DarkLWebSide.AutoSize = true;
+            this.DarkLWebSide.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.DarkLWebSide.ForeColor = System.Drawing.Color.Cyan;
+            this.DarkLWebSide.Location = new System.Drawing.Point(12, 109);
+            this.DarkLWebSide.Name = "DarkLWebSide";
+            this.DarkLWebSide.Size = new System.Drawing.Size(57, 20);
+            this.DarkLWebSide.TabIndex = 16;
+            this.DarkLWebSide.Text = "Strona";
+            // 
+            // DarkTBWebSide
+            // 
+            this.DarkTBWebSide.BackColor = System.Drawing.Color.DarkGray;
+            this.DarkTBWebSide.Location = new System.Drawing.Point(103, 109);
+            this.DarkTBWebSide.Name = "DarkTBWebSide";
+            this.DarkTBWebSide.Size = new System.Drawing.Size(263, 20);
+            this.DarkTBWebSide.TabIndex = 15;
+            // 
+            // DarkTBNote
+            // 
+            this.DarkTBNote.BackColor = System.Drawing.Color.DarkGray;
+            this.DarkTBNote.Location = new System.Drawing.Point(103, 129);
+            this.DarkTBNote.Name = "DarkTBNote";
+            this.DarkTBNote.Size = new System.Drawing.Size(263, 20);
+            this.DarkTBNote.TabIndex = 14;
+            // 
+            // DarkLMail
+            // 
+            this.DarkLMail.AutoSize = true;
+            this.DarkLMail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.DarkLMail.ForeColor = System.Drawing.Color.Cyan;
+            this.DarkLMail.Location = new System.Drawing.Point(13, 89);
+            this.DarkLMail.Name = "DarkLMail";
+            this.DarkLMail.Size = new System.Drawing.Size(53, 20);
+            this.DarkLMail.TabIndex = 19;
+            this.DarkLMail.Text = "E-mail";
+            // 
+            // DarkTBMail
+            // 
+            this.DarkTBMail.BackColor = System.Drawing.Color.DarkGray;
+            this.DarkTBMail.Location = new System.Drawing.Point(103, 89);
+            this.DarkTBMail.Name = "DarkTBMail";
+            this.DarkTBMail.Size = new System.Drawing.Size(263, 20);
+            this.DarkTBMail.TabIndex = 18;
             // 
             // PasswordDarkMode
             // 
@@ -213,6 +276,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.DarkLMail);
+            this.Controls.Add(this.DarkTBMail);
+            this.Controls.Add(this.DarkLNote);
+            this.Controls.Add(this.DarkLWebSide);
+            this.Controls.Add(this.DarkTBWebSide);
+            this.Controls.Add(this.DarkTBNote);
             this.Controls.Add(this.DarkBModyficatePassword);
             this.Controls.Add(this.DarkBDeletePassword);
             this.Controls.Add(this.DarkCBPassword);
@@ -256,5 +325,11 @@
         private System.Windows.Forms.ToolStripMenuItem DarkModeinPasswordToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem DarkBlackModeinPasswordToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem DarkLightModeinPasswordToolStripMenuItem;
+        private System.Windows.Forms.Label DarkLNote;
+        private System.Windows.Forms.Label DarkLWebSide;
+        private System.Windows.Forms.TextBox DarkTBWebSide;
+        private System.Windows.Forms.TextBox DarkTBNote;
+        private System.Windows.Forms.Label DarkLMail;
+        private System.Windows.Forms.TextBox DarkTBMail;
     }
 }

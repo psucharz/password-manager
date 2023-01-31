@@ -45,6 +45,12 @@
             this.ModeinPasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.BlackModeinPasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.LightModeinPasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.LNote = new System.Windows.Forms.Label();
+            this.LWebSide = new System.Windows.Forms.Label();
+            this.TBWebSide = new System.Windows.Forms.TextBox();
+            this.TBNote = new System.Windows.Forms.TextBox();
+            this.TBMail = new System.Windows.Forms.TextBox();
+            this.LMail = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,16 +74,16 @@
             // 
             // TBPassword
             // 
-            this.TBPassword.Location = new System.Drawing.Point(67, 69);
+            this.TBPassword.Location = new System.Drawing.Point(108, 69);
             this.TBPassword.Name = "TBPassword";
-            this.TBPassword.Size = new System.Drawing.Size(100, 20);
+            this.TBPassword.Size = new System.Drawing.Size(246, 20);
             this.TBPassword.TabIndex = 2;
             // 
             // TBLogin
             // 
-            this.TBLogin.Location = new System.Drawing.Point(67, 52);
+            this.TBLogin.Location = new System.Drawing.Point(108, 49);
             this.TBLogin.Name = "TBLogin";
-            this.TBLogin.Size = new System.Drawing.Size(100, 20);
+            this.TBLogin.Size = new System.Drawing.Size(246, 20);
             this.TBLogin.TabIndex = 3;
             // 
             // LLoginInPassword
@@ -102,7 +108,7 @@
             // 
             // BAddNewPassword
             // 
-            this.BAddNewPassword.Location = new System.Drawing.Point(17, 92);
+            this.BAddNewPassword.Location = new System.Drawing.Point(17, 155);
             this.BAddNewPassword.Name = "BAddNewPassword";
             this.BAddNewPassword.Size = new System.Drawing.Size(150, 23);
             this.BAddNewPassword.TabIndex = 6;
@@ -111,7 +117,7 @@
             // 
             // TBShowPassword
             // 
-            this.TBShowPassword.Location = new System.Drawing.Point(360, 24);
+            this.TBShowPassword.Location = new System.Drawing.Point(360, 46);
             this.TBShowPassword.Name = "TBShowPassword";
             this.TBShowPassword.Size = new System.Drawing.Size(137, 23);
             this.TBShowPassword.TabIndex = 7;
@@ -120,7 +126,7 @@
             // 
             // TBHidePassword
             // 
-            this.TBHidePassword.Location = new System.Drawing.Point(360, 49);
+            this.TBHidePassword.Location = new System.Drawing.Point(360, 71);
             this.TBHidePassword.Name = "TBHidePassword";
             this.TBHidePassword.Size = new System.Drawing.Size(137, 23);
             this.TBHidePassword.TabIndex = 8;
@@ -139,14 +145,14 @@
             // CBPassword
             // 
             this.CBPassword.FormattingEnabled = true;
-            this.CBPassword.Location = new System.Drawing.Point(17, 121);
+            this.CBPassword.Location = new System.Drawing.Point(17, 184);
             this.CBPassword.Name = "CBPassword";
             this.CBPassword.Size = new System.Drawing.Size(150, 21);
             this.CBPassword.TabIndex = 10;
             // 
             // BDeletePassword
             // 
-            this.BDeletePassword.Location = new System.Drawing.Point(17, 148);
+            this.BDeletePassword.Location = new System.Drawing.Point(17, 211);
             this.BDeletePassword.Name = "BDeletePassword";
             this.BDeletePassword.Size = new System.Drawing.Size(150, 23);
             this.BDeletePassword.TabIndex = 11;
@@ -155,7 +161,7 @@
             // 
             // BModyficatePassword
             // 
-            this.BModyficatePassword.Location = new System.Drawing.Point(17, 168);
+            this.BModyficatePassword.Location = new System.Drawing.Point(17, 231);
             this.BModyficatePassword.Name = "BModyficatePassword";
             this.BModyficatePassword.Size = new System.Drawing.Size(150, 23);
             this.BModyficatePassword.TabIndex = 12;
@@ -184,20 +190,77 @@
             // BlackModeinPasswordToolStripMenuItem
             // 
             this.BlackModeinPasswordToolStripMenuItem.Name = "BlackModeinPasswordToolStripMenuItem";
-            this.BlackModeinPasswordToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.BlackModeinPasswordToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
             this.BlackModeinPasswordToolStripMenuItem.Text = "Ciemny";
             // 
             // LightModeinPasswordToolStripMenuItem
             // 
             this.LightModeinPasswordToolStripMenuItem.Name = "LightModeinPasswordToolStripMenuItem";
-            this.LightModeinPasswordToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.LightModeinPasswordToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
             this.LightModeinPasswordToolStripMenuItem.Text = "Jasny";
+            // 
+            // LNote
+            // 
+            this.LNote.AutoSize = true;
+            this.LNote.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.LNote.Location = new System.Drawing.Point(13, 129);
+            this.LNote.Name = "LNote";
+            this.LNote.Size = new System.Drawing.Size(84, 20);
+            this.LNote.TabIndex = 17;
+            this.LNote.Text = "Informacje";
+            // 
+            // LWebSide
+            // 
+            this.LWebSide.AutoSize = true;
+            this.LWebSide.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.LWebSide.Location = new System.Drawing.Point(13, 109);
+            this.LWebSide.Name = "LWebSide";
+            this.LWebSide.Size = new System.Drawing.Size(57, 20);
+            this.LWebSide.TabIndex = 16;
+            this.LWebSide.Text = "Strona";
+            // 
+            // TBWebSide
+            // 
+            this.TBWebSide.Location = new System.Drawing.Point(108, 109);
+            this.TBWebSide.Name = "TBWebSide";
+            this.TBWebSide.Size = new System.Drawing.Size(246, 20);
+            this.TBWebSide.TabIndex = 15;
+            // 
+            // TBNote
+            // 
+            this.TBNote.Location = new System.Drawing.Point(108, 129);
+            this.TBNote.Name = "TBNote";
+            this.TBNote.Size = new System.Drawing.Size(246, 20);
+            this.TBNote.TabIndex = 14;
+            // 
+            // TBMail
+            // 
+            this.TBMail.Location = new System.Drawing.Point(108, 89);
+            this.TBMail.Name = "TBMail";
+            this.TBMail.Size = new System.Drawing.Size(246, 20);
+            this.TBMail.TabIndex = 18;
+            // 
+            // LMail
+            // 
+            this.LMail.AutoSize = true;
+            this.LMail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.LMail.Location = new System.Drawing.Point(13, 89);
+            this.LMail.Name = "LMail";
+            this.LMail.Size = new System.Drawing.Size(53, 20);
+            this.LMail.TabIndex = 19;
+            this.LMail.Text = "E-mail";
             // 
             // Password
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.LMail);
+            this.Controls.Add(this.TBMail);
+            this.Controls.Add(this.LNote);
+            this.Controls.Add(this.LWebSide);
+            this.Controls.Add(this.TBWebSide);
+            this.Controls.Add(this.TBNote);
             this.Controls.Add(this.BModyficatePassword);
             this.Controls.Add(this.BDeletePassword);
             this.Controls.Add(this.CBPassword);
@@ -241,5 +304,11 @@
         private System.Windows.Forms.ToolStripMenuItem ModeinPasswordToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem BlackModeinPasswordToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem LightModeinPasswordToolStripMenuItem;
+        private System.Windows.Forms.Label LNote;
+        private System.Windows.Forms.Label LWebSide;
+        private System.Windows.Forms.TextBox TBWebSide;
+        private System.Windows.Forms.TextBox TBNote;
+        private System.Windows.Forms.TextBox TBMail;
+        private System.Windows.Forms.Label LMail;
     }
 }
