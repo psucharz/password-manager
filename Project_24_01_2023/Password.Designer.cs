@@ -28,48 +28,52 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.TBLoginsAndPasswords = new System.Windows.Forms.TextBox();
+            this.LAddPassword = new System.Windows.Forms.Label();
+            this.TBPassword = new System.Windows.Forms.TextBox();
+            this.TBLogin = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.BAddNewPassword = new System.Windows.Forms.Button();
+            this.TBShowPassword = new System.Windows.Forms.Button();
+            this.TBHidePassword = new System.Windows.Forms.Button();
+            this.BLogOut = new System.Windows.Forms.Button();
+            this.CBPassword = new System.Windows.Forms.ComboBox();
+            this.BDeletePassword = new System.Windows.Forms.Button();
+            this.BModyficatePassword = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // TBLoginsAndPasswords
             // 
-            this.textBox1.Location = new System.Drawing.Point(503, 12);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(285, 426);
-            this.textBox1.TabIndex = 0;
+            this.TBLoginsAndPasswords.Location = new System.Drawing.Point(503, 12);
+            this.TBLoginsAndPasswords.Multiline = true;
+            this.TBLoginsAndPasswords.Name = "TBLoginsAndPasswords";
+            this.TBLoginsAndPasswords.Size = new System.Drawing.Size(285, 426);
+            this.TBLoginsAndPasswords.TabIndex = 0;
             // 
-            // label1
+            // LAddPassword
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(12, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(129, 25);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Dodaj Hasło";
+            this.LAddPassword.AutoSize = true;
+            this.LAddPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.LAddPassword.Location = new System.Drawing.Point(12, 12);
+            this.LAddPassword.Name = "LAddPassword";
+            this.LAddPassword.Size = new System.Drawing.Size(129, 25);
+            this.LAddPassword.TabIndex = 1;
+            this.LAddPassword.Text = "Dodaj Hasło";
             // 
-            // textBox2
+            // TBPassword
             // 
-            this.textBox2.Location = new System.Drawing.Point(67, 57);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 2;
+            this.TBPassword.Location = new System.Drawing.Point(67, 57);
+            this.TBPassword.Name = "TBPassword";
+            this.TBPassword.Size = new System.Drawing.Size(100, 20);
+            this.TBPassword.TabIndex = 2;
             // 
-            // textBox3
+            // TBLogin
             // 
-            this.textBox3.Location = new System.Drawing.Point(67, 40);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 3;
+            this.TBLogin.Location = new System.Drawing.Point(67, 40);
+            this.TBLogin.Name = "TBLogin";
+            this.TBLogin.Size = new System.Drawing.Size(100, 20);
+            this.TBLogin.TabIndex = 3;
             // 
             // label2
             // 
@@ -91,47 +95,86 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Haslo";
             // 
-            // button1
+            // BAddNewPassword
             // 
-            this.button1.Location = new System.Drawing.Point(17, 80);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Dodaj";
-            this.button1.UseVisualStyleBackColor = true;
+            this.BAddNewPassword.Location = new System.Drawing.Point(17, 80);
+            this.BAddNewPassword.Name = "BAddNewPassword";
+            this.BAddNewPassword.Size = new System.Drawing.Size(150, 23);
+            this.BAddNewPassword.TabIndex = 6;
+            this.BAddNewPassword.Text = "Dodaj";
+            this.BAddNewPassword.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // TBShowPassword
             // 
-            this.button2.Location = new System.Drawing.Point(360, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(137, 23);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Wyświetl Hasła";
-            this.button2.UseVisualStyleBackColor = true;
+            this.TBShowPassword.Location = new System.Drawing.Point(360, 12);
+            this.TBShowPassword.Name = "TBShowPassword";
+            this.TBShowPassword.Size = new System.Drawing.Size(137, 23);
+            this.TBShowPassword.TabIndex = 7;
+            this.TBShowPassword.Text = "Wyświetl Hasła";
+            this.TBShowPassword.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // TBHidePassword
             // 
-            this.button3.Location = new System.Drawing.Point(360, 37);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(137, 23);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "Ukryj Hasła";
-            this.button3.UseVisualStyleBackColor = true;
+            this.TBHidePassword.Location = new System.Drawing.Point(360, 37);
+            this.TBHidePassword.Name = "TBHidePassword";
+            this.TBHidePassword.Size = new System.Drawing.Size(137, 23);
+            this.TBHidePassword.TabIndex = 8;
+            this.TBHidePassword.Text = "Ukryj Hasła";
+            this.TBHidePassword.UseVisualStyleBackColor = true;
+            // 
+            // BLogOut
+            // 
+            this.BLogOut.Location = new System.Drawing.Point(17, 405);
+            this.BLogOut.Name = "BLogOut";
+            this.BLogOut.Size = new System.Drawing.Size(124, 33);
+            this.BLogOut.TabIndex = 9;
+            this.BLogOut.Text = "Wylogój";
+            this.BLogOut.UseVisualStyleBackColor = true;
+            // 
+            // CBPassword
+            // 
+            this.CBPassword.FormattingEnabled = true;
+            this.CBPassword.Location = new System.Drawing.Point(17, 109);
+            this.CBPassword.Name = "CBPassword";
+            this.CBPassword.Size = new System.Drawing.Size(150, 21);
+            this.CBPassword.TabIndex = 10;
+            // 
+            // BDeletePassword
+            // 
+            this.BDeletePassword.Location = new System.Drawing.Point(17, 136);
+            this.BDeletePassword.Name = "BDeletePassword";
+            this.BDeletePassword.Size = new System.Drawing.Size(150, 23);
+            this.BDeletePassword.TabIndex = 11;
+            this.BDeletePassword.Text = "Usuń";
+            this.BDeletePassword.UseVisualStyleBackColor = true;
+            // 
+            // BModyficatePassword
+            // 
+            this.BModyficatePassword.Location = new System.Drawing.Point(17, 156);
+            this.BModyficatePassword.Name = "BModyficatePassword";
+            this.BModyficatePassword.Size = new System.Drawing.Size(150, 23);
+            this.BModyficatePassword.TabIndex = 12;
+            this.BModyficatePassword.Text = "Modyfikuj";
+            this.BModyficatePassword.UseVisualStyleBackColor = true;
             // 
             // Password
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.BModyficatePassword);
+            this.Controls.Add(this.BDeletePassword);
+            this.Controls.Add(this.CBPassword);
+            this.Controls.Add(this.BLogOut);
+            this.Controls.Add(this.TBHidePassword);
+            this.Controls.Add(this.TBShowPassword);
+            this.Controls.Add(this.BAddNewPassword);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.TBLogin);
+            this.Controls.Add(this.TBPassword);
+            this.Controls.Add(this.LAddPassword);
+            this.Controls.Add(this.TBLoginsAndPasswords);
             this.Name = "Password";
             this.Text = "Password";
             this.ResumeLayout(false);
@@ -141,14 +184,18 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox TBLoginsAndPasswords;
+        private System.Windows.Forms.Label LAddPassword;
+        private System.Windows.Forms.TextBox TBPassword;
+        private System.Windows.Forms.TextBox TBLogin;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button BAddNewPassword;
+        private System.Windows.Forms.Button TBShowPassword;
+        private System.Windows.Forms.Button TBHidePassword;
+        private System.Windows.Forms.Button BLogOut;
+        private System.Windows.Forms.ComboBox CBPassword;
+        private System.Windows.Forms.Button BDeletePassword;
+        private System.Windows.Forms.Button BModyficatePassword;
     }
 }

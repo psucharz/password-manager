@@ -58,6 +58,7 @@
             this.LUseSupplementaryQuestion = new System.Windows.Forms.Label();
             this.LUseAnserw = new System.Windows.Forms.Label();
             this.TBUseAnserw = new System.Windows.Forms.TextBox();
+            this.BChange = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PBUser)).BeginInit();
             this.SuspendLayout();
             // 
@@ -170,7 +171,7 @@
             // 
             this.LLogin.AutoSize = true;
             this.LLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.LLogin.Location = new System.Drawing.Point(11, 194);
+            this.LLogin.Location = new System.Drawing.Point(12, 194);
             this.LLogin.Name = "LLogin";
             this.LLogin.Size = new System.Drawing.Size(116, 25);
             this.LLogin.TabIndex = 13;
@@ -322,11 +323,21 @@
             this.TBUseAnserw.Size = new System.Drawing.Size(626, 20);
             this.TBUseAnserw.TabIndex = 30;
             // 
+            // BChange
+            // 
+            this.BChange.Location = new System.Drawing.Point(158, 189);
+            this.BChange.Name = "BChange";
+            this.BChange.Size = new System.Drawing.Size(110, 23);
+            this.BChange.TabIndex = 31;
+            this.BChange.Text = "Modyfikuj";
+            this.BChange.UseVisualStyleBackColor = true;
+            // 
             // LMakeAnserw
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.BChange);
             this.Controls.Add(this.TBUseAnserw);
             this.Controls.Add(this.LUseAnserw);
             this.Controls.Add(this.LUseSupplementaryQuestion);
@@ -397,6 +408,7 @@
         private System.Windows.Forms.Label LUseSupplementaryQuestion;
         private System.Windows.Forms.Label LUseAnserw;
         private System.Windows.Forms.TextBox TBUseAnserw;
+        private System.Windows.Forms.Button BChange;
     }
 }
 
