@@ -1,30 +1,40 @@
 ﻿using PasswordGenerator;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Text.RegularExpressions;
 
 namespace Project_24_01_2023
 {
     public class PasswordInfo
     {
-        public string Password { get; set; }
+        private string _password;
+        public void SetPassword(string password)
+        {
+           _password = password;
+        }
+
+        public PasswordInfo(string password)
+        {
+            SetPassword(password);
+        }
 
         public String CheckPasswordStrength()
         {
-            if (Password.Length < 10)
+            if (_password.Length < 10)
                 return "Password must be at least 8 characters long";
-            if (!Regex.IsMatch(Password, @"\p{Ll}"))
+            if (!Regex.IsMatch(_password, @"\p{Ll}"))
                 return "Password must contain lowercase letters.";
-            if (!Regex.IsMatch(Password, @"\p{Lu}"))
+            if (!Regex.IsMatch(_password, @"\p{Lu}"))
                 return "Password must contain uppercase letters.";
-            if (!Regex.IsMatch(Password, @"\d"))
+            if (!Regex.IsMatch(_password, @"\d"))
                 return "Password must contain digits.";
-            if (!Regex.IsMatch(Password, @"[^a-zA-Z0-9]"))
+            if (!Regex.IsMatch(_password, @"[^a-zA-Z0-9]"))
                 return "Password must contain special characters.";
             return "Password is strong";
         }
 
-        public static String GeneratePassword()
+        public static string GeneratePassword()
         {
             PasswordGenerator.Password password = new Password(includeLowercase: true, includeUppercase: true, includeNumeric: true, includeSpecial: true, passwordLength: 8);
             return password.Next();
@@ -35,15 +45,20 @@ namespace Project_24_01_2023
     {
         public string Firstname { get; set; }
         public string Lastname { get; set; }
-        public DateTime DateCreated { get; set; }
+        public Bitmap ProfilePicture { get; set; }
         public Dictionary<string, string> recoveryQuestions;
+        public DateTime DateCreated { get; set; }
+        public DateTime LoginTimeout { get; }
+        public int FailedLoginAttempts { get; }
 
-        public ProfileCredentials(string firstname, string lastname, string password)
+        public ProfileCredentials(string firstname, string lastname, string password) :base(password)
         {
             Firstname = firstname;
             Lastname = lastname;
-            Password = password;
+            SetPassword(password);
             DateCreated = DateTime.Now;
+            LoginTimeout = DateTime.Now;
+            FailedLoginAttempts = 0;
         }
 
         public void AddRecoveryQuestion(String question, String answer)
@@ -86,7 +101,7 @@ namespace Project_24_01_2023
         public string Notes { get; set; }
         public DateTime DateCreated { get; set; }
 
-        public Credentials(string firstname, string lastname, string email, string website, string password, string notes)
+        public Credentials(string firstname, string lastname, string email, string website, string password, string notes) : base(password)
         {
             Firstname = firstname;
             Lastname = lastname;
@@ -94,7 +109,6 @@ namespace Project_24_01_2023
                 Email = email;
             if (email.Length > 0)
                 Website = website;
-            Password = password;
             Notes = notes;
             DateCreated = DateTime.Now;
         }
