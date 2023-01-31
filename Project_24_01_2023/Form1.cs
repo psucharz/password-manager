@@ -17,6 +17,9 @@ namespace Project_24_01_2023
             InitializeComponent();
         }
 
-       
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
