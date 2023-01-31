@@ -56,7 +56,7 @@
             // 
             // TBLoginsAndPasswords
             // 
-            this.TBLoginsAndPasswords.Location = new System.Drawing.Point(503, 24);
+            this.TBLoginsAndPasswords.Location = new System.Drawing.Point(515, 30);
             this.TBLoginsAndPasswords.Multiline = true;
             this.TBLoginsAndPasswords.Name = "TBLoginsAndPasswords";
             this.TBLoginsAndPasswords.Size = new System.Drawing.Size(285, 414);
@@ -76,14 +76,14 @@
             // 
             this.TBPassword.Location = new System.Drawing.Point(108, 69);
             this.TBPassword.Name = "TBPassword";
-            this.TBPassword.Size = new System.Drawing.Size(246, 20);
+            this.TBPassword.Size = new System.Drawing.Size(258, 20);
             this.TBPassword.TabIndex = 2;
             // 
             // TBLogin
             // 
             this.TBLogin.Location = new System.Drawing.Point(108, 49);
             this.TBLogin.Name = "TBLogin";
-            this.TBLogin.Size = new System.Drawing.Size(246, 20);
+            this.TBLogin.Size = new System.Drawing.Size(258, 20);
             this.TBLogin.TabIndex = 3;
             // 
             // LLoginInPassword
@@ -117,7 +117,7 @@
             // 
             // TBShowPassword
             // 
-            this.TBShowPassword.Location = new System.Drawing.Point(360, 46);
+            this.TBShowPassword.Location = new System.Drawing.Point(372, 47);
             this.TBShowPassword.Name = "TBShowPassword";
             this.TBShowPassword.Size = new System.Drawing.Size(137, 23);
             this.TBShowPassword.TabIndex = 7;
@@ -126,7 +126,7 @@
             // 
             // TBHidePassword
             // 
-            this.TBHidePassword.Location = new System.Drawing.Point(360, 71);
+            this.TBHidePassword.Location = new System.Drawing.Point(372, 69);
             this.TBHidePassword.Name = "TBHidePassword";
             this.TBHidePassword.Size = new System.Drawing.Size(137, 23);
             this.TBHidePassword.TabIndex = 8;
@@ -223,21 +223,21 @@
             // 
             this.TBWebSide.Location = new System.Drawing.Point(108, 109);
             this.TBWebSide.Name = "TBWebSide";
-            this.TBWebSide.Size = new System.Drawing.Size(246, 20);
+            this.TBWebSide.Size = new System.Drawing.Size(258, 20);
             this.TBWebSide.TabIndex = 15;
             // 
             // TBNote
             // 
             this.TBNote.Location = new System.Drawing.Point(108, 129);
             this.TBNote.Name = "TBNote";
-            this.TBNote.Size = new System.Drawing.Size(246, 20);
+            this.TBNote.Size = new System.Drawing.Size(258, 20);
             this.TBNote.TabIndex = 14;
             // 
             // TBMail
             // 
             this.TBMail.Location = new System.Drawing.Point(108, 89);
             this.TBMail.Name = "TBMail";
-            this.TBMail.Size = new System.Drawing.Size(246, 20);
+            this.TBMail.Size = new System.Drawing.Size(258, 20);
             this.TBMail.TabIndex = 18;
             // 
             // LMail
