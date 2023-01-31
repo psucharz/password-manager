@@ -1,6 +1,6 @@
 ﻿namespace Project_24_01_2023
 {
-    partial class Form1
+    partial class LMakeAnserw
     {
         /// <summary>
         /// Required designer variable.
@@ -46,13 +46,26 @@
             this.LUsePassword = new System.Windows.Forms.Label();
             this.TBUsePassword = new System.Windows.Forms.TextBox();
             this.BLogIn = new System.Windows.Forms.Button();
+            this.BDelateUser = new System.Windows.Forms.Button();
+            this.BAddPhoto = new System.Windows.Forms.Button();
+            this.LMakeSupplementaryQuestion = new System.Windows.Forms.Label();
+            this.TBSupplementaryQuestion = new System.Windows.Forms.TextBox();
+            this.TBMakeAnserw = new System.Windows.Forms.TextBox();
+            this.LMakeAnserwQuestion = new System.Windows.Forms.Label();
+            this.TBUseSupplementaryQuestion = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.PBUser = new System.Windows.Forms.PictureBox();
+            this.LUseSupplementaryQuestion = new System.Windows.Forms.Label();
+            this.LUseAnserw = new System.Windows.Forms.Label();
+            this.TBUseAnserw = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.PBUser)).BeginInit();
             this.SuspendLayout();
             // 
             // BAddUser
             // 
-            this.BAddUser.Location = new System.Drawing.Point(17, 121);
+            this.BAddUser.Location = new System.Drawing.Point(158, 147);
             this.BAddUser.Name = "BAddUser";
-            this.BAddUser.Size = new System.Drawing.Size(173, 23);
+            this.BAddUser.Size = new System.Drawing.Size(110, 23);
             this.BAddUser.TabIndex = 0;
             this.BAddUser.Text = "Dodaj Uzytkownika";
             this.BAddUser.UseVisualStyleBackColor = true;
@@ -201,16 +214,131 @@
             // 
             this.BLogIn.Location = new System.Drawing.Point(12, 262);
             this.BLogIn.Name = "BLogIn";
-            this.BLogIn.Size = new System.Drawing.Size(75, 23);
+            this.BLogIn.Size = new System.Drawing.Size(106, 23);
             this.BLogIn.TabIndex = 18;
             this.BLogIn.Text = "Zaloguj";
             this.BLogIn.UseVisualStyleBackColor = true;
             // 
-            // Form1
+            // BDelateUser
+            // 
+            this.BDelateUser.Location = new System.Drawing.Point(158, 168);
+            this.BDelateUser.Name = "BDelateUser";
+            this.BDelateUser.Size = new System.Drawing.Size(110, 23);
+            this.BDelateUser.TabIndex = 19;
+            this.BDelateUser.Text = "Usuń Uzytkownika";
+            this.BDelateUser.UseVisualStyleBackColor = true;
+            // 
+            // BAddPhoto
+            // 
+            this.BAddPhoto.Location = new System.Drawing.Point(16, 121);
+            this.BAddPhoto.Name = "BAddPhoto";
+            this.BAddPhoto.Size = new System.Drawing.Size(102, 23);
+            this.BAddPhoto.TabIndex = 20;
+            this.BAddPhoto.Text = "Dodaj Zdięcie";
+            this.BAddPhoto.UseVisualStyleBackColor = true;
+            // 
+            // LMakeSupplementaryQuestion
+            // 
+            this.LMakeSupplementaryQuestion.AutoSize = true;
+            this.LMakeSupplementaryQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.LMakeSupplementaryQuestion.Location = new System.Drawing.Point(196, 35);
+            this.LMakeSupplementaryQuestion.Name = "LMakeSupplementaryQuestion";
+            this.LMakeSupplementaryQuestion.Size = new System.Drawing.Size(143, 20);
+            this.LMakeSupplementaryQuestion.TabIndex = 21;
+            this.LMakeSupplementaryQuestion.Text = "Pytanie dodatkowe";
+            // 
+            // TBSupplementaryQuestion
+            // 
+            this.TBSupplementaryQuestion.Location = new System.Drawing.Point(345, 37);
+            this.TBSupplementaryQuestion.Name = "TBSupplementaryQuestion";
+            this.TBSupplementaryQuestion.Size = new System.Drawing.Size(443, 20);
+            this.TBSupplementaryQuestion.TabIndex = 22;
+            // 
+            // TBMakeAnserw
+            // 
+            this.TBMakeAnserw.Location = new System.Drawing.Point(345, 55);
+            this.TBMakeAnserw.Name = "TBMakeAnserw";
+            this.TBMakeAnserw.Size = new System.Drawing.Size(443, 20);
+            this.TBMakeAnserw.TabIndex = 23;
+            // 
+            // LMakeAnserwQuestion
+            // 
+            this.LMakeAnserwQuestion.AutoSize = true;
+            this.LMakeAnserwQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.LMakeAnserwQuestion.Location = new System.Drawing.Point(196, 53);
+            this.LMakeAnserwQuestion.Name = "LMakeAnserwQuestion";
+            this.LMakeAnserwQuestion.Size = new System.Drawing.Size(88, 20);
+            this.LMakeAnserwQuestion.TabIndex = 24;
+            this.LMakeAnserwQuestion.Text = "Odpowiedź";
+            // 
+            // TBUseSupplementaryQuestion
+            // 
+            this.TBUseSupplementaryQuestion.Location = new System.Drawing.Point(162, 324);
+            this.TBUseSupplementaryQuestion.Name = "TBUseSupplementaryQuestion";
+            this.TBUseSupplementaryQuestion.Size = new System.Drawing.Size(626, 20);
+            this.TBUseSupplementaryQuestion.TabIndex = 25;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(12, 291);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(106, 23);
+            this.button1.TabIndex = 26;
+            this.button1.Text = "Przypomnij Hasło";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // PBUser
+            // 
+            this.PBUser.Location = new System.Drawing.Point(642, 95);
+            this.PBUser.Name = "PBUser";
+            this.PBUser.Size = new System.Drawing.Size(146, 166);
+            this.PBUser.TabIndex = 27;
+            this.PBUser.TabStop = false;
+            // 
+            // LUseSupplementaryQuestion
+            // 
+            this.LUseSupplementaryQuestion.AutoSize = true;
+            this.LUseSupplementaryQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.LUseSupplementaryQuestion.Location = new System.Drawing.Point(13, 322);
+            this.LUseSupplementaryQuestion.Name = "LUseSupplementaryQuestion";
+            this.LUseSupplementaryQuestion.Size = new System.Drawing.Size(143, 20);
+            this.LUseSupplementaryQuestion.TabIndex = 28;
+            this.LUseSupplementaryQuestion.Text = "Pytanie dodatkowe";
+            // 
+            // LUseAnserw
+            // 
+            this.LUseAnserw.AutoSize = true;
+            this.LUseAnserw.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.LUseAnserw.Location = new System.Drawing.Point(13, 342);
+            this.LUseAnserw.Name = "LUseAnserw";
+            this.LUseAnserw.Size = new System.Drawing.Size(88, 20);
+            this.LUseAnserw.TabIndex = 29;
+            this.LUseAnserw.Text = "Odpowiedź";
+            // 
+            // TBUseAnserw
+            // 
+            this.TBUseAnserw.Location = new System.Drawing.Point(162, 342);
+            this.TBUseAnserw.Name = "TBUseAnserw";
+            this.TBUseAnserw.Size = new System.Drawing.Size(626, 20);
+            this.TBUseAnserw.TabIndex = 30;
+            // 
+            // LMakeAnserw
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.TBUseAnserw);
+            this.Controls.Add(this.LUseAnserw);
+            this.Controls.Add(this.LUseSupplementaryQuestion);
+            this.Controls.Add(this.PBUser);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.TBUseSupplementaryQuestion);
+            this.Controls.Add(this.LMakeAnserwQuestion);
+            this.Controls.Add(this.TBMakeAnserw);
+            this.Controls.Add(this.TBSupplementaryQuestion);
+            this.Controls.Add(this.LMakeSupplementaryQuestion);
+            this.Controls.Add(this.BAddPhoto);
+            this.Controls.Add(this.BDelateUser);
             this.Controls.Add(this.BLogIn);
             this.Controls.Add(this.TBUsePassword);
             this.Controls.Add(this.LUsePassword);
@@ -229,8 +357,9 @@
             this.Controls.Add(this.TBName);
             this.Controls.Add(this.LMakeUser);
             this.Controls.Add(this.BAddUser);
-            this.Name = "Form1";
+            this.Name = "LMakeAnserw";
             this.Text = "Users";
+            ((System.ComponentModel.ISupportInitialize)(this.PBUser)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -256,6 +385,18 @@
         private System.Windows.Forms.Label LUsePassword;
         private System.Windows.Forms.TextBox TBUsePassword;
         private System.Windows.Forms.Button BLogIn;
+        private System.Windows.Forms.Button BDelateUser;
+        private System.Windows.Forms.Button BAddPhoto;
+        private System.Windows.Forms.Label LMakeSupplementaryQuestion;
+        private System.Windows.Forms.TextBox TBSupplementaryQuestion;
+        private System.Windows.Forms.TextBox TBMakeAnserw;
+        private System.Windows.Forms.Label LMakeAnserwQuestion;
+        private System.Windows.Forms.TextBox TBUseSupplementaryQuestion;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox PBUser;
+        private System.Windows.Forms.Label LUseSupplementaryQuestion;
+        private System.Windows.Forms.Label LUseAnserw;
+        private System.Windows.Forms.TextBox TBUseAnserw;
     }
 }
 
