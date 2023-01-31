@@ -10,16 +10,13 @@ using System.Windows.Forms;
 
 namespace Project_24_01_2023
 {
-    public partial class LMakeAnserw : Form
+    public partial class PasswordDarkMode : Form
     {
-        public LMakeAnserw()
+        public PasswordDarkMode()
         {
             InitializeComponent();
         }
 
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 }
