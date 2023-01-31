@@ -58,9 +58,9 @@
             this.TBUseAnserw = new System.Windows.Forms.TextBox();
             this.BChange = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.ModeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ciemnyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.jasnyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ModeinUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.BlackModeinUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.LightModeinUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CBMakeSupplementaryQuestion = new System.Windows.Forms.ComboBox();
             this.CBAddSupplementaryQuestion = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.PBUser)).BeginInit();
@@ -326,33 +326,33 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ModeToolStripMenuItem});
+            this.ModeinUserToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
             this.menuStrip1.TabIndex = 32;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // ModeToolStripMenuItem
+            // ModeinUserToolStripMenuItem
             // 
-            this.ModeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ciemnyToolStripMenuItem,
-            this.jasnyToolStripMenuItem});
-            this.ModeToolStripMenuItem.Name = "ModeToolStripMenuItem";
-            this.ModeToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
-            this.ModeToolStripMenuItem.Text = "Tryb";
+            this.ModeinUserToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.BlackModeinUserToolStripMenuItem,
+            this.LightModeinUserToolStripMenuItem});
+            this.ModeinUserToolStripMenuItem.Name = "ModeinUserToolStripMenuItem";
+            this.ModeinUserToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
+            this.ModeinUserToolStripMenuItem.Text = "Tryb";
             // 
-            // ciemnyToolStripMenuItem
+            // BlackModeinUserToolStripMenuItem
             // 
-            this.ciemnyToolStripMenuItem.Name = "ciemnyToolStripMenuItem";
-            this.ciemnyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.ciemnyToolStripMenuItem.Text = "Ciemny";
+            this.BlackModeinUserToolStripMenuItem.Name = "BlackModeinUserToolStripMenuItem";
+            this.BlackModeinUserToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.BlackModeinUserToolStripMenuItem.Text = "Ciemny";
             // 
-            // jasnyToolStripMenuItem
+            // LightModeinUserToolStripMenuItem
             // 
-            this.jasnyToolStripMenuItem.Name = "jasnyToolStripMenuItem";
-            this.jasnyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.jasnyToolStripMenuItem.Text = "Jasny";
+            this.LightModeinUserToolStripMenuItem.Name = "LightModeinUserToolStripMenuItem";
+            this.LightModeinUserToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.LightModeinUserToolStripMenuItem.Text = "Jasny";
             // 
             // CBMakeSupplementaryQuestion
             // 
@@ -462,9 +462,9 @@
         private System.Windows.Forms.TextBox TBUseAnserw;
         private System.Windows.Forms.Button BChange;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem ModeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ciemnyToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem jasnyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ModeinUserToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem BlackModeinUserToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem LightModeinUserToolStripMenuItem;
         private System.Windows.Forms.ComboBox CBMakeSupplementaryQuestion;
         private System.Windows.Forms.ComboBox CBAddSupplementaryQuestion;
     }
