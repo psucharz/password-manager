@@ -10,13 +10,11 @@ using System.Windows.Forms;
 
 namespace Project_24_01_2023
 {
-    public partial class Form1 : Form
+    public partial class Password : Form
     {
-        public Form1()
+        public Password()
         {
             InitializeComponent();
         }
-
-       
     }
 }
