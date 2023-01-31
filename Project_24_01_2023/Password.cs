@@ -1,4 +1,4 @@
-using PasswordGenerator;
+﻿using PasswordGenerator;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -11,7 +11,7 @@ namespace Project_24_01_2023
         private string _password;
         public void SetPassword(string password)
         {
-           _password = password;
+            _password = password;
         }
 
         public PasswordInfo(string password)
@@ -51,7 +51,7 @@ namespace Project_24_01_2023
         public DateTime LoginTimeout { get; }
         public int FailedLoginAttempts { get; }
 
-        public ProfileCredentials(string firstname, string lastname, string password) :base(password)
+        public ProfileCredentials(string firstname, string lastname, string password) : base(password)
         {
             Firstname = firstname;
             Lastname = lastname;

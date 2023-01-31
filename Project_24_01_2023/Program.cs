@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Project_24_01_2023
@@ -16,7 +13,7 @@ namespace Project_24_01_2023
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LMakeAnserw());
+            Application.Run(new ProfilesForm());
         }
     }
 }

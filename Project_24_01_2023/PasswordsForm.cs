@@ -10,13 +10,11 @@ using System.Windows.Forms;
 
 namespace Project_24_01_2023
 {
-    public partial class PasswordDarkMode : Form
+    public partial class PasswordsForm : Form
     {
-        public PasswordDarkMode()
+        public PasswordsForm()
         {
             InitializeComponent();
         }
-
-      
     }
 }

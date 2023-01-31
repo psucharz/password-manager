@@ -10,13 +10,11 @@ using System.Windows.Forms;
 
 namespace Project_24_01_2023
 {
-    public partial class BlackUser : Form
+    public partial class ProfilesForm : Form
     {
-        public BlackUser()
+        public ProfilesForm()
         {
             InitializeComponent();
         }
-
-   
     }
 }
