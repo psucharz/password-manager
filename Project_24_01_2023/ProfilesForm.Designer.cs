@@ -28,6 +28,7 @@
         /// </summary>
             private void InitializeComponent()
             {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProfilesForm));
             this.AddProfileButton = new System.Windows.Forms.Button();
             this.UserCreationLabel = new System.Windows.Forms.Label();
             this.FirstNameTextBox = new System.Windows.Forms.TextBox();
@@ -48,14 +49,15 @@
             this.RecAnswerTextBox = new System.Windows.Forms.TextBox();
             this.RecAnswerLabel = new System.Windows.Forms.Label();
             this.RecoverButton = new System.Windows.Forms.Button();
-            this.UserPhoto = new System.Windows.Forms.PictureBox();
+            this.ProfilePhoto = new System.Windows.Forms.PictureBox();
             this.RecQuestion2Label = new System.Windows.Forms.Label();
             this.RecAnswer2Label = new System.Windows.Forms.Label();
             this.RecAnswer2TextBox = new System.Windows.Forms.TextBox();
             this.ModifyProfileButton = new System.Windows.Forms.Button();
             this.RecQuestionsComboBox = new System.Windows.Forms.ComboBox();
             this.RecQuestion2ComboBox = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.UserPhoto)).BeginInit();
+            this.GenPasswordButton = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.ProfilePhoto)).BeginInit();
             this.SuspendLayout();
             // 
             // AddProfileButton
@@ -68,6 +70,7 @@
             this.AddProfileButton.TabIndex = 0;
             this.AddProfileButton.Text = "Add Profile";
             this.AddProfileButton.UseVisualStyleBackColor = false;
+            this.AddProfileButton.Click += new System.EventHandler(this.AddProfileButton_Click);
             // 
             // UserCreationLabel
             // 
@@ -143,6 +146,7 @@
             this.PasswordTextBox.Name = "PasswordTextBox";
             this.PasswordTextBox.Size = new System.Drawing.Size(220, 22);
             this.PasswordTextBox.TabIndex = 10;
+            this.PasswordTextBox.TextChanged += new System.EventHandler(this.PasswordTextBox_TextChanged);
             // 
             // ProfilesLabel
             // 
@@ -165,25 +169,26 @@
             this.ProfilesComboBox.Name = "ProfilesComboBox";
             this.ProfilesComboBox.Size = new System.Drawing.Size(457, 24);
             this.ProfilesComboBox.TabIndex = 12;
+            this.ProfilesComboBox.SelectedIndexChanged += new System.EventHandler(this.ProfilesComboBox_SelectedIndexChanged);
             // 
             // LoginLabel
             // 
             this.LoginLabel.AutoSize = true;
             this.LoginLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.LoginLabel.ForeColor = System.Drawing.Color.Cyan;
-            this.LoginLabel.Location = new System.Drawing.Point(32, 455);
+            this.LoginLabel.Location = new System.Drawing.Point(24, 454);
             this.LoginLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LoginLabel.Name = "LoginLabel";
-            this.LoginLabel.Size = new System.Drawing.Size(87, 31);
+            this.LoginLabel.Size = new System.Drawing.Size(166, 31);
             this.LoginLabel.TabIndex = 13;
-            this.LoginLabel.Text = "Log in";
+            this.LoginLabel.Text = "Authenticate";
             // 
             // Password2Label
             // 
             this.Password2Label.AutoSize = true;
             this.Password2Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Password2Label.ForeColor = System.Drawing.Color.Cyan;
-            this.Password2Label.Location = new System.Drawing.Point(37, 496);
+            this.Password2Label.Location = new System.Drawing.Point(32, 496);
             this.Password2Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Password2Label.Name = "Password2Label";
             this.Password2Label.Size = new System.Drawing.Size(98, 25);
@@ -193,7 +198,7 @@
             // Password2TextBox
             // 
             this.Password2TextBox.BackColor = System.Drawing.Color.DarkGray;
-            this.Password2TextBox.Location = new System.Drawing.Point(143, 496);
+            this.Password2TextBox.Location = new System.Drawing.Point(138, 496);
             this.Password2TextBox.Margin = new System.Windows.Forms.Padding(4);
             this.Password2TextBox.Name = "Password2TextBox";
             this.Password2TextBox.Size = new System.Drawing.Size(220, 22);
@@ -202,13 +207,14 @@
             // LoginButton
             // 
             this.LoginButton.BackColor = System.Drawing.Color.DarkGray;
-            this.LoginButton.Location = new System.Drawing.Point(31, 541);
+            this.LoginButton.Location = new System.Drawing.Point(37, 540);
             this.LoginButton.Margin = new System.Windows.Forms.Padding(4);
             this.LoginButton.Name = "LoginButton";
-            this.LoginButton.Size = new System.Drawing.Size(141, 28);
+            this.LoginButton.Size = new System.Drawing.Size(150, 28);
             this.LoginButton.TabIndex = 18;
             this.LoginButton.Text = "Log in";
             this.LoginButton.UseVisualStyleBackColor = false;
+            this.LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
             // 
             // DeleteProfileButton
             // 
@@ -220,6 +226,7 @@
             this.DeleteProfileButton.TabIndex = 19;
             this.DeleteProfileButton.Text = "Delete Profile";
             this.DeleteProfileButton.UseVisualStyleBackColor = false;
+            this.DeleteProfileButton.Click += new System.EventHandler(this.DeleteProfileButton_Click);
             // 
             // AddPhotoButton
             // 
@@ -231,6 +238,7 @@
             this.AddPhotoButton.TabIndex = 20;
             this.AddPhotoButton.Text = "Add Profile Photo";
             this.AddPhotoButton.UseVisualStyleBackColor = false;
+            this.AddPhotoButton.Click += new System.EventHandler(this.AddPhotoButton_Click);
             // 
             // RecQuestionLabel
             // 
@@ -268,22 +276,27 @@
             // RecoverButton
             // 
             this.RecoverButton.BackColor = System.Drawing.Color.DarkGray;
-            this.RecoverButton.Location = new System.Drawing.Point(180, 541);
+            this.RecoverButton.Location = new System.Drawing.Point(192, 540);
             this.RecoverButton.Margin = new System.Windows.Forms.Padding(4);
             this.RecoverButton.Name = "RecoverButton";
-            this.RecoverButton.Size = new System.Drawing.Size(141, 28);
+            this.RecoverButton.Size = new System.Drawing.Size(150, 28);
             this.RecoverButton.TabIndex = 26;
             this.RecoverButton.Text = "Remind password";
             this.RecoverButton.UseVisualStyleBackColor = false;
+            this.RecoverButton.Click += new System.EventHandler(this.RecoverButton_Click);
             // 
-            // UserPhoto
+            // ProfilePhoto
             // 
-            this.UserPhoto.Location = new System.Drawing.Point(665, 306);
-            this.UserPhoto.Margin = new System.Windows.Forms.Padding(4);
-            this.UserPhoto.Name = "UserPhoto";
-            this.UserPhoto.Size = new System.Drawing.Size(200, 200);
-            this.UserPhoto.TabIndex = 27;
-            this.UserPhoto.TabStop = false;
+            this.ProfilePhoto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ProfilePhoto.BackgroundImage")));
+            this.ProfilePhoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ProfilePhoto.Image = ((System.Drawing.Image)(resources.GetObject("ProfilePhoto.Image")));
+            this.ProfilePhoto.Location = new System.Drawing.Point(665, 306);
+            this.ProfilePhoto.Margin = new System.Windows.Forms.Padding(4);
+            this.ProfilePhoto.Name = "ProfilePhoto";
+            this.ProfilePhoto.Size = new System.Drawing.Size(200, 200);
+            this.ProfilePhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ProfilePhoto.TabIndex = 27;
+            this.ProfilePhoto.TabStop = false;
             // 
             // RecQuestion2Label
             // 
@@ -328,15 +341,16 @@
             this.ModifyProfileButton.TabIndex = 31;
             this.ModifyProfileButton.Text = "Modify Profile";
             this.ModifyProfileButton.UseVisualStyleBackColor = false;
+            this.ModifyProfileButton.Click += new System.EventHandler(this.ModifyProfileButton_Click);
             // 
             // RecQuestionsComboBox
             // 
             this.RecQuestionsComboBox.BackColor = System.Drawing.Color.DarkGray;
             this.RecQuestionsComboBox.FormattingEnabled = true;
             this.RecQuestionsComboBox.Items.AddRange(new object[] {
-            "Name of your first pet:",
-            "Patron of your first school:",
-            "Mothers maiden name:"});
+            "Name of your first pet",
+            "Patron of your first school",
+            "Mothers maiden name"});
             this.RecQuestionsComboBox.Location = new System.Drawing.Point(224, 153);
             this.RecQuestionsComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.RecQuestionsComboBox.Name = "RecQuestionsComboBox";
@@ -347,17 +361,21 @@
             // 
             this.RecQuestion2ComboBox.BackColor = System.Drawing.Color.DarkGray;
             this.RecQuestion2ComboBox.FormattingEnabled = true;
-            this.RecQuestion2ComboBox.Items.AddRange(new object[] {
-            "Imie Pierwszego Zwierzaka",
-            "Patron Piewszej Szkoły ",
-            "Nazw Panienńskie Matki",
-            "Ulubiona Potrawa",
-            "Warzne Wydarzenie"});
             this.RecQuestion2ComboBox.Location = new System.Drawing.Point(203, 636);
             this.RecQuestion2ComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.RecQuestion2ComboBox.Name = "RecQuestion2ComboBox";
             this.RecQuestion2ComboBox.Size = new System.Drawing.Size(662, 24);
             this.RecQuestion2ComboBox.TabIndex = 34;
+            // 
+            // GenPasswordButton
+            // 
+            this.GenPasswordButton.Location = new System.Drawing.Point(452, 121);
+            this.GenPasswordButton.Name = "GenPasswordButton";
+            this.GenPasswordButton.Size = new System.Drawing.Size(90, 23);
+            this.GenPasswordButton.TabIndex = 35;
+            this.GenPasswordButton.Text = "Generate";
+            this.GenPasswordButton.UseVisualStyleBackColor = true;
+            this.GenPasswordButton.Click += new System.EventHandler(this.GenPasswordButton_Click);
             // 
             // ProfilesForm
             // 
@@ -365,13 +383,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(932, 733);
+            this.Controls.Add(this.GenPasswordButton);
             this.Controls.Add(this.RecQuestion2ComboBox);
             this.Controls.Add(this.RecQuestionsComboBox);
             this.Controls.Add(this.ModifyProfileButton);
             this.Controls.Add(this.RecAnswer2TextBox);
             this.Controls.Add(this.RecAnswer2Label);
             this.Controls.Add(this.RecQuestion2Label);
-            this.Controls.Add(this.UserPhoto);
+            this.Controls.Add(this.ProfilePhoto);
             this.Controls.Add(this.RecoverButton);
             this.Controls.Add(this.RecAnswerLabel);
             this.Controls.Add(this.RecAnswerTextBox);
@@ -396,7 +415,7 @@
             this.MinimumSize = new System.Drawing.Size(950, 780);
             this.Name = "ProfilesForm";
             this.Text = "Profiles";
-            ((System.ComponentModel.ISupportInitialize)(this.UserPhoto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProfilePhoto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -424,12 +443,13 @@
         private System.Windows.Forms.TextBox RecAnswerTextBox;
         private System.Windows.Forms.Label RecAnswerLabel;
         private System.Windows.Forms.Button RecoverButton;
-        private System.Windows.Forms.PictureBox UserPhoto;
+        private System.Windows.Forms.PictureBox ProfilePhoto;
         private System.Windows.Forms.Label RecQuestion2Label;
         private System.Windows.Forms.Label RecAnswer2Label;
         private System.Windows.Forms.TextBox RecAnswer2TextBox;
         private System.Windows.Forms.Button ModifyProfileButton;
         private System.Windows.Forms.ComboBox RecQuestionsComboBox;
         private System.Windows.Forms.ComboBox RecQuestion2ComboBox;
+        private System.Windows.Forms.Button GenPasswordButton;
     }
 }
