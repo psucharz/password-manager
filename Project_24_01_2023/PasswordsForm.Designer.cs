@@ -45,16 +45,11 @@
             this.PasswordsLabel = new System.Windows.Forms.Label();
             this.ProfileLabel = new System.Windows.Forms.Label();
             this.CurrProfileLabel = new System.Windows.Forms.Label();
-            this.PasswordsListView = new System.Windows.Forms.ListView();
             this.LastNameLabel = new System.Windows.Forms.Label();
             this.LastNameTextBox = new System.Windows.Forms.TextBox();
             this.GeneratePassButton = new System.Windows.Forms.Button();
-            this.FirstName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.LastName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Password = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Email = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Website = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Notes = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.PasswordsDataGrid = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.PasswordsDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // PasswordTextBox
@@ -117,7 +112,7 @@
             // LogoutButton
             // 
             this.LogoutButton.BackColor = System.Drawing.Color.DarkGray;
-            this.LogoutButton.Location = new System.Drawing.Point(337, 9);
+            this.LogoutButton.Location = new System.Drawing.Point(410, 9);
             this.LogoutButton.Margin = new System.Windows.Forms.Padding(4);
             this.LogoutButton.Name = "LogoutButton";
             this.LogoutButton.Size = new System.Drawing.Size(150, 28);
@@ -221,7 +216,7 @@
             this.PasswordsLabel.AutoSize = true;
             this.PasswordsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.PasswordsLabel.ForeColor = System.Drawing.Color.Cyan;
-            this.PasswordsLabel.Location = new System.Drawing.Point(584, 9);
+            this.PasswordsLabel.Location = new System.Drawing.Point(608, 9);
             this.PasswordsLabel.Name = "PasswordsLabel";
             this.PasswordsLabel.Size = new System.Drawing.Size(148, 31);
             this.PasswordsLabel.TabIndex = 20;
@@ -242,32 +237,12 @@
             // 
             this.CurrProfileLabel.AutoSize = true;
             this.CurrProfileLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.CurrProfileLabel.ForeColor = System.Drawing.Color.Cyan;
+            this.CurrProfileLabel.ForeColor = System.Drawing.Color.Teal;
             this.CurrProfileLabel.Location = new System.Drawing.Point(109, 9);
             this.CurrProfileLabel.Name = "CurrProfileLabel";
             this.CurrProfileLabel.Size = new System.Drawing.Size(209, 31);
             this.CurrProfileLabel.TabIndex = 22;
             this.CurrProfileLabel.Text = "PROFILENAME";
-            // 
-            // PasswordsListView
-            // 
-            this.PasswordsListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.FirstName,
-            this.LastName,
-            this.Password,
-            this.Email,
-            this.Website,
-            this.Notes});
-            this.PasswordsListView.FullRowSelect = true;
-            this.PasswordsListView.GridLines = true;
-            this.PasswordsListView.HideSelection = false;
-            this.PasswordsListView.Location = new System.Drawing.Point(590, 69);
-            this.PasswordsListView.Name = "PasswordsListView";
-            this.PasswordsListView.Size = new System.Drawing.Size(724, 393);
-            this.PasswordsListView.TabIndex = 23;
-            this.PasswordsListView.UseCompatibleStateImageBehavior = false;
-            this.PasswordsListView.View = System.Windows.Forms.View.Details;
-            this.PasswordsListView.SelectedIndexChanged += new System.EventHandler(this.PasswordsListView_SelectedIndexChanged);
             // 
             // LastNameLabel
             // 
@@ -295,52 +270,37 @@
             // 
             this.GeneratePassButton.Location = new System.Drawing.Point(486, 142);
             this.GeneratePassButton.Name = "GeneratePassButton";
-            this.GeneratePassButton.Size = new System.Drawing.Size(75, 23);
+            this.GeneratePassButton.Size = new System.Drawing.Size(90, 23);
             this.GeneratePassButton.TabIndex = 26;
             this.GeneratePassButton.Text = "Generate";
             this.GeneratePassButton.UseVisualStyleBackColor = true;
             this.GeneratePassButton.Click += new System.EventHandler(this.GeneratePassButton_Click);
             // 
-            // FirstName
+            // PasswordsDataGrid
             // 
-            this.FirstName.Text = "First Name";
-            this.FirstName.Width = 100;
-            // 
-            // LastName
-            // 
-            this.LastName.Text = "Last Name";
-            this.LastName.Width = 100;
-            // 
-            // Password
-            // 
-            this.Password.Text = "Password";
-            this.Password.Width = 100;
-            // 
-            // Email
-            // 
-            this.Email.Text = "E-mail";
-            this.Email.Width = 140;
-            // 
-            // Website
-            // 
-            this.Website.Text = "Website";
-            this.Website.Width = 140;
-            // 
-            // Notes
-            // 
-            this.Notes.Text = "Notes";
-            this.Notes.Width = 140;
+            this.PasswordsDataGrid.AllowUserToAddRows = false;
+            this.PasswordsDataGrid.AllowUserToDeleteRows = false;
+            this.PasswordsDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.PasswordsDataGrid.Location = new System.Drawing.Point(614, 73);
+            this.PasswordsDataGrid.MultiSelect = false;
+            this.PasswordsDataGrid.Name = "PasswordsDataGrid";
+            this.PasswordsDataGrid.ReadOnly = true;
+            this.PasswordsDataGrid.RowHeadersWidth = 51;
+            this.PasswordsDataGrid.RowTemplate.Height = 24;
+            this.PasswordsDataGrid.Size = new System.Drawing.Size(1095, 568);
+            this.PasswordsDataGrid.TabIndex = 27;
+            this.PasswordsDataGrid.SelectionChanged += new System.EventHandler(this.PasswordsDataGrid_SelectionChanged);
             // 
             // PasswordsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(1344, 653);
+            this.ClientSize = new System.Drawing.Size(1732, 653);
+            this.Controls.Add(this.PasswordsDataGrid);
             this.Controls.Add(this.GeneratePassButton);
             this.Controls.Add(this.LastNameLabel);
             this.Controls.Add(this.LastNameTextBox);
-            this.Controls.Add(this.PasswordsListView);
             this.Controls.Add(this.CurrProfileLabel);
             this.Controls.Add(this.ProfileLabel);
             this.Controls.Add(this.PasswordsLabel);
@@ -359,9 +319,10 @@
             this.Controls.Add(this.FirstNameTextBox);
             this.Controls.Add(this.PasswordTextBox);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.MinimumSize = new System.Drawing.Size(1100, 700);
+            this.MinimumSize = new System.Drawing.Size(1750, 700);
             this.Name = "PasswordsForm";
             this.Text = "Password";
+            ((System.ComponentModel.ISupportInitialize)(this.PasswordsDataGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -385,15 +346,9 @@
         private System.Windows.Forms.Label PasswordsLabel;
         private System.Windows.Forms.Label ProfileLabel;
         private System.Windows.Forms.Label CurrProfileLabel;
-        private System.Windows.Forms.ListView PasswordsListView;
         private System.Windows.Forms.Label LastNameLabel;
         private System.Windows.Forms.TextBox LastNameTextBox;
         private System.Windows.Forms.Button GeneratePassButton;
-        private System.Windows.Forms.ColumnHeader FirstName;
-        private System.Windows.Forms.ColumnHeader LastName;
-        private System.Windows.Forms.ColumnHeader Password;
-        private System.Windows.Forms.ColumnHeader Email;
-        private System.Windows.Forms.ColumnHeader Website;
-        private System.Windows.Forms.ColumnHeader Notes;
+        private System.Windows.Forms.DataGridView PasswordsDataGrid;
     }
 }

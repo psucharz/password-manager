@@ -10,8 +10,8 @@ namespace Project_24_01_2023
 {
     public partial class ProfilesForm : Form
     {
-        ErrorProvider passwordErrorProv;
-        List<ProfileCredentials> profiles;
+        private ErrorProvider passwordErrorProv;
+        private List<Profile> profiles;
 
         public ProfilesForm()
         {
@@ -25,7 +25,7 @@ namespace Project_24_01_2023
         /// </summary>
         private void ProfilesComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var selectedProfile = (ProfileCredentials)ProfilesComboBox.SelectedItem;
+            Profile selectedProfile = (Profile)ProfilesComboBox.SelectedItem;
             if (selectedProfile != null)
             {
                 FirstNameTextBox.Text = selectedProfile.FirstName;
@@ -42,12 +42,23 @@ namespace Project_24_01_2023
         /// </summary>
         private void AddProfileButton_Click(object sender, EventArgs e)
         {
-            string encPass = AESEncryption.Encrypt(PasswordTextBox.Text, PasswordTextBox.Text);
-            string encAns = AESEncryption.Encrypt(RecAnswerTextBox.Text, RecAnswerTextBox.Text);
-            ProfileCredentials pC = new ProfileCredentials(0, FirstNameTextBox.Text, LastNameTextBox.Text, encPass,
-                RecQuestionsComboBox.Text, encAns);
-            ProfilesDAO.SetProfile(pC);
-            LoadProfiles();
+            if (FirstNameTextBox.Text == String.Empty || LastNameTextBox.Text == String.Empty)
+            {
+                MessageBox.Show("First name and last name are required.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (passwordErrorProv.GetError(PasswordTextBox) != String.Empty)
+            {
+                MessageBox.Show("Invalid password. Check password errors to know what's wrong.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                string encPass = AESEncryption.Encrypt(PasswordTextBox.Text, PasswordTextBox.Text);
+                string encAns = AESEncryption.Encrypt(RecAnswerTextBox.Text, RecAnswerTextBox.Text);
+                Profile pC = new Profile(0, FirstNameTextBox.Text, LastNameTextBox.Text, encPass,
+                    RecQuestionsComboBox.Text, encAns);
+                ProfilesDAO.SetProfile(pC);
+                LoadProfiles();
+            }
         }
 
         /// <summary>
@@ -57,8 +68,8 @@ namespace Project_24_01_2023
         {
             if (ProfilesComboBox.SelectedIndex > -1 && Password2TextBox.Text != String.Empty)
             {
-                ProfileCredentials oldProfile = (ProfileCredentials)ProfilesComboBox.SelectedItem;
-                string decPass = AESEncryption.Decrypt(oldProfile.Password, Password2TextBox.Text);
+                Profile selectedProfile = (Profile)ProfilesComboBox.SelectedItem;
+                string decPass = AESEncryption.Decrypt(selectedProfile.Password, Password2TextBox.Text);
                 if (Password2TextBox.Text != decPass)
                 {
                     MessageBox.Show("Provided password is incorrect", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -70,7 +81,7 @@ namespace Project_24_01_2023
                 else
                 {
                     string encAns = AESEncryption.Encrypt(RecAnswerTextBox.Text, RecAnswerTextBox.Text);
-                    ProfileCredentials profile = new ProfileCredentials(oldProfile.Id, FirstNameTextBox.Text, LastNameTextBox.Text, "",
+                    Profile profile = new Profile(selectedProfile.Id, FirstNameTextBox.Text, LastNameTextBox.Text, "",
                     RecQuestionsComboBox.Text, encAns);
                     ProfilesDAO.ModifyProfile(profile);
                     LoadProfiles();
@@ -78,7 +89,7 @@ namespace Project_24_01_2023
             }
             else
             {
-                MessageBox.Show("You must provide a password to this profile", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("You must provide a password to this selectedProfile", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -89,11 +100,11 @@ namespace Project_24_01_2023
         {
             if (ProfilesComboBox.SelectedIndex > -1)
             {
-                ProfileCredentials profile = (ProfileCredentials)ProfilesComboBox.SelectedItem;
-                string decPass = AESEncryption.Decrypt(profile.Password, Password2TextBox.Text);
+                Profile selectedProfile = (Profile)ProfilesComboBox.SelectedItem;
+                string decPass = AESEncryption.Decrypt(selectedProfile.Password, Password2TextBox.Text);
                 if (Password2TextBox.Text == decPass)
                 {
-                    ProfilesDAO.DeleteProfile(profile);
+                    ProfilesDAO.DeleteProfile(selectedProfile);
                     LoadProfiles();
                 }
                 else
@@ -124,7 +135,7 @@ namespace Project_24_01_2023
         }
 
         /// <summary>
-        /// opens file explorer to pick a profile picture < 1MB and in either .png or .jpeg format
+        /// opens file explorer to pick a selectedProfile picture < 1MB and in either .png or .jpeg format
         /// </summary>
         private void AddPhotoButton_Click(object sender, EventArgs e)
         {
@@ -141,7 +152,7 @@ namespace Project_24_01_2023
                         string fileExtension = Path.GetExtension(openFileDialog.FileName).ToLower();
                         if (fileExtension == ".png" || fileExtension == ".jpg")    //Check if file is an image
                         {
-                            ProfileCredentials pC = (ProfileCredentials)ProfilesComboBox.SelectedItem;
+                            Profile pC = (Profile)ProfilesComboBox.SelectedItem;
                             using (var stream = new FileStream(openFileDialog.FileName, FileMode.Open))
                             {
                                 var picture = new byte[stream.Length];
@@ -165,26 +176,26 @@ namespace Project_24_01_2023
         }
 
         /// <summary>
-        /// Opens a new Form containing passwords linked to this profile
+        /// Opens a new Form containing passwords linked to this selectedProfile
         /// </summary>
         private void LoginButton_Click(object sender, EventArgs e)
         {
             if (ProfilesComboBox.SelectedIndex > -1)
             {
-                ProfileCredentials profile = (ProfileCredentials)ProfilesComboBox.SelectedItem;
-                string decPass = AESEncryption.Decrypt(profile.Password, Password2TextBox.Text);
+                Profile selectedProfile = (Profile)ProfilesComboBox.SelectedItem;
+                string decPass = AESEncryption.Decrypt(selectedProfile.Password, Password2TextBox.Text);
                 if (Password2TextBox.Text != decPass)
                 {
-                    profile.TimeOutLogin();
+                    selectedProfile.TimeOutLogin();
                     MessageBox.Show("Provided password is incorrect.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                else if (DateTime.Parse(profile.LoginTimeout) > DateTime.Now)
+                else if (DateTime.Parse(selectedProfile.LoginTimeout) > DateTime.Now)
                 {
                     MessageBox.Show("Too many login attempts. Try again later.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    PasswordsForm passwordsForm = new PasswordsForm(profile);
+                    PasswordsForm passwordsForm = new PasswordsForm(selectedProfile);
                     passwordsForm.ShowDialog();
                 }
             }
@@ -197,10 +208,10 @@ namespace Project_24_01_2023
         {
             if (ProfilesComboBox.SelectedIndex > -1)
             {
-                ProfileCredentials profile = (ProfileCredentials)ProfilesComboBox.SelectedItem;
-                string decAns = AESEncryption.Decrypt(profile.RecoveryAnswer, RecAnswer2TextBox.Text);
-                if(profile.RecoveryQuestion == RecQuestion2ComboBox.Text && decAns == RecAnswer2TextBox.Text)
-                    Password2TextBox.Text = profile.Password;
+                Profile selectedProfile = (Profile)ProfilesComboBox.SelectedItem;
+                string decAns = AESEncryption.Decrypt(selectedProfile.RecoveryAnswer, RecAnswer2TextBox.Text);
+                if(selectedProfile.RecoveryQuestion == RecQuestion2ComboBox.Text && decAns == RecAnswer2TextBox.Text)
+                    Password2TextBox.Text = selectedProfile.Password;
                 else
                     MessageBox.Show("Recovery answers either not set or incorrect", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -210,9 +221,9 @@ namespace Project_24_01_2023
         {
             if (ProfilesComboBox.SelectedIndex > -1)
             {
-                ProfileCredentials profile = (ProfileCredentials)ProfilesComboBox.SelectedItem;
-                if (RecQuestionsComboBox.Text == profile.RecoveryQuestion)
-                    RecAnswerTextBox.Text = new string(profile.RecoveryAnswer.Select(l => '*').ToArray());
+                Profile selectedProfile = (Profile)ProfilesComboBox.SelectedItem;
+                if (RecQuestionsComboBox.Text == selectedProfile.RecoveryQuestion)
+                    RecAnswerTextBox.Text = new string(selectedProfile.RecoveryAnswer.Select(l => '*').ToArray());
                 else
                     RecAnswerTextBox.Text = String.Empty;
             }
@@ -230,9 +241,9 @@ namespace Project_24_01_2023
         {
             if (ProfilesComboBox.SelectedIndex > -1)
             {
-                ProfileCredentials profile = (ProfileCredentials)ProfilesComboBox.SelectedItem;
-                RecQuestionsComboBox.Text = profile.RecoveryQuestion;
-                RecQuestion2ComboBox.Text = profile.RecoveryQuestion;
+                Profile selectedProfile = (Profile)ProfilesComboBox.SelectedItem;
+                RecQuestionsComboBox.Text = selectedProfile.RecoveryQuestion;
+                RecQuestion2ComboBox.Text = selectedProfile.RecoveryQuestion;
             }
         }
 
@@ -240,10 +251,10 @@ namespace Project_24_01_2023
         {
             if (ProfilesComboBox.SelectedIndex > -1)
             {
-                ProfileCredentials profile = (ProfileCredentials)ProfilesComboBox.SelectedItem;
-                if (profile.ProfilePicture != null)
+                Profile selectedProfile = (Profile)ProfilesComboBox.SelectedItem;
+                if (selectedProfile.ProfilePicture != null)
                 {
-                    using (var ms = new MemoryStream(profile.ProfilePicture))
+                    using (var ms = new MemoryStream(selectedProfile.ProfilePicture))
                     {
                         Image image = Image.FromStream(ms);
                         ProfilePhoto.Image = image;

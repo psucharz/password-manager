@@ -3,6 +3,7 @@ using System;
 using System.Drawing;
 using System.IO;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
 
 namespace Project_24_01_2023
 {
@@ -14,6 +15,8 @@ namespace Project_24_01_2023
         {
             Password = password;
         }
+
+        public PasswordInfo() { }
 
         public string CheckPasswordStrength()
         {
@@ -37,13 +40,14 @@ namespace Project_24_01_2023
 
         public static string GeneratePassword()
         {
-            PasswordGenerator.Password password = new Password(includeLowercase: true, includeUppercase: true, includeNumeric: true, includeSpecial: true, passwordLength: 8);
+            PasswordGenerator.Password password = new PasswordGenerator.Password(includeLowercase: true, includeUppercase: true, includeNumeric: true, includeSpecial: true, passwordLength: 8);
             return password.Next();
         }
     }
 
-    public class ProfileCredentials : PasswordInfo
+    public class Profile : PasswordInfo
     {
+        public long Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public byte[] ProfilePicture { get; set; }
@@ -51,12 +55,15 @@ namespace Project_24_01_2023
         public string RecoveryAnswer { get; set; }
         public string DateModified { get; set; }
         public string LoginTimeout { get; set; }
-        public int FailedLoginAttempts { get; set; }
+        public long FailedLoginAttempts { get; set; }
 
         public string FullName => FirstName + " " + LastName;
 
-        public ProfileCredentials(string firstname, string lastname, string password, string recoveryQuestion, string recoveryAnswer) : base(password)
+        public Profile() { }
+
+        public Profile(long id, string firstname, string lastname, string password, string recoveryQuestion, string recoveryAnswer) : base(password)
         {
+            Id = id;
             FirstName = firstname;
             LastName = lastname;
             RecoveryQuestion = recoveryQuestion;
@@ -80,7 +87,7 @@ namespace Project_24_01_2023
             if (FailedLoginAttempts > 10)
             {
                 FailedLoginAttempts = 0;
-                LoginTimeout = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                LoginTimeout = DateTime.Now.AddHours(1).ToString("yyyy-MM-dd HH:mm:ss");
                 return true;
             }
             else
@@ -91,40 +98,24 @@ namespace Project_24_01_2023
         }
     }
 
-    public class Credentials : PasswordInfo
+    public class Password : PasswordInfo
     {
-        public int ReferenceId { get; set; }
+        public long Id { get; set; }
+        public long ReferenceId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        private string _email;
-        public string Email
-        {
-            get => _email;
-            set
-            {
-                if (Regex.IsMatch(value, @"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"))
-                    _email = value;
-                else
-                    throw new ArgumentException("Invalid email address");
-            }
-        }
-        private string _website;
-        public string Website
-        {
-            get => _website;
-            set
-            {
-                if (Regex.IsMatch(value, @"/^(https?:\/\/)?(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*)$"))
-                    _website = value;
-                else
-                    throw new ArgumentException("Invalid URL address");
-            }
-        }
+        public string Email { get; set; }
+        public string Website { get; set; }
         public string Notes { get; set; }
         public string DateModified { get; set; }
 
-        public Credentials(string firstname, string lastname, string email, string website, string password, string notes) : base(password)
+        public Password() { }
+
+        public Password(string firstname, string lastname, string password,
+            string email, string website,  string notes, long id, long referenceId) : base(password)
         {
+            Id = id;
+            ReferenceId = referenceId;
             FirstName = firstname;
             LastName = lastname;
             Email = email;
