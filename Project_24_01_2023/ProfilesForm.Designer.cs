@@ -294,7 +294,7 @@
             this.ProfilePhoto.Margin = new System.Windows.Forms.Padding(4);
             this.ProfilePhoto.Name = "ProfilePhoto";
             this.ProfilePhoto.Size = new System.Drawing.Size(200, 200);
-            this.ProfilePhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ProfilePhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ProfilePhoto.TabIndex = 27;
             this.ProfilePhoto.TabStop = false;
             // 
@@ -356,6 +356,7 @@
             this.RecQuestionsComboBox.Name = "RecQuestionsComboBox";
             this.RecQuestionsComboBox.Size = new System.Drawing.Size(641, 24);
             this.RecQuestionsComboBox.TabIndex = 33;
+            this.RecQuestionsComboBox.SelectedIndexChanged += new System.EventHandler(this.RecQuestionsComboBox_SelectedIndexChanged);
             // 
             // RecQuestion2ComboBox
             // 

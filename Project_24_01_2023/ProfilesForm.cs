@@ -164,11 +164,35 @@ namespace Project_24_01_2023
             }
         }
 
+        /// <summary>
+        /// Opens a new Form containing passwords linked to this profile
+        /// </summary>
         private void LoginButton_Click(object sender, EventArgs e)
         {
-
+            if (ProfilesComboBox.SelectedIndex > -1)
+            {
+                ProfileCredentials profile = (ProfileCredentials)ProfilesComboBox.SelectedItem;
+                string decPass = AESEncryption.Decrypt(profile.Password, Password2TextBox.Text);
+                if (Password2TextBox.Text != decPass)
+                {
+                    profile.TimeOutLogin();
+                    MessageBox.Show("Provided password is incorrect.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (DateTime.Parse(profile.LoginTimeout) > DateTime.Now)
+                {
+                    MessageBox.Show("Too many login attempts. Try again later.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    PasswordsForm passwordsForm = new PasswordsForm(profile);
+                    passwordsForm.ShowDialog();
+                }
+            }
         }
 
+        /// <summary>
+        /// Recovers forgotten password if user correctly answers recovery questions
+        /// </summary>
         private void RecoverButton_Click(object sender, EventArgs e)
         {
             if (ProfilesComboBox.SelectedIndex > -1)
@@ -179,6 +203,18 @@ namespace Project_24_01_2023
                     Password2TextBox.Text = profile.Password;
                 else
                     MessageBox.Show("Recovery answers either not set or incorrect", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void RecQuestionsComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ProfilesComboBox.SelectedIndex > -1)
+            {
+                ProfileCredentials profile = (ProfileCredentials)ProfilesComboBox.SelectedItem;
+                if (RecQuestionsComboBox.Text == profile.RecoveryQuestion)
+                    RecAnswerTextBox.Text = new string(profile.RecoveryAnswer.Select(l => '*').ToArray());
+                else
+                    RecAnswerTextBox.Text = String.Empty;
             }
         }
 
@@ -228,9 +264,6 @@ namespace Project_24_01_2023
             ProfilesComboBox.DisplayMember = "FullName";
         }
 
-        /// <summary>
-        /// Puts profiles from database to List
-        /// </summary>
         private void UpdateProfilesList()
         {
             profiles = ProfilesDAO.GetProfiles();
