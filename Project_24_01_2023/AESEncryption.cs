@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Project_24_01_2023
 {
@@ -47,7 +43,7 @@ namespace Project_24_01_2023
             return Convert.ToBase64String(encryptedBytes);
         }
 
-        public static string Decrypt(string encryptedText, string password, string IV)
+        public static string Decrypt(string encryptedText, string password)
         {
             byte[] encryptedBytes = Convert.FromBase64String(encryptedText);
             string decryptedText;

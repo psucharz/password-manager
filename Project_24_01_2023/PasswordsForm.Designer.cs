@@ -45,10 +45,16 @@
             this.PasswordsLabel = new System.Windows.Forms.Label();
             this.ProfileLabel = new System.Windows.Forms.Label();
             this.CurrProfileLabel = new System.Windows.Forms.Label();
-            this.PassworsListView = new System.Windows.Forms.ListView();
+            this.PasswordsListView = new System.Windows.Forms.ListView();
             this.LastNameLabel = new System.Windows.Forms.Label();
             this.LastNameTextBox = new System.Windows.Forms.TextBox();
             this.GeneratePassButton = new System.Windows.Forms.Button();
+            this.FirstName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.LastName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Password = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Email = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Website = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Notes = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // PasswordTextBox
@@ -60,6 +66,7 @@
             this.PasswordTextBox.Name = "PasswordTextBox";
             this.PasswordTextBox.Size = new System.Drawing.Size(349, 22);
             this.PasswordTextBox.TabIndex = 2;
+            this.PasswordTextBox.TextChanged += new System.EventHandler(this.PasswordTextBox_TextChanged);
             // 
             // FirstNameTextBox
             // 
@@ -105,6 +112,7 @@
             this.AddPasswordButton.TabIndex = 6;
             this.AddPasswordButton.Text = "Add";
             this.AddPasswordButton.UseVisualStyleBackColor = false;
+            this.AddPasswordButton.Click += new System.EventHandler(this.AddPasswordButton_Click);
             // 
             // LogoutButton
             // 
@@ -116,6 +124,7 @@
             this.LogoutButton.TabIndex = 9;
             this.LogoutButton.Text = "Log out";
             this.LogoutButton.UseVisualStyleBackColor = false;
+            this.LogoutButton.Click += new System.EventHandler(this.LogoutButton_Click);
             // 
             // DeletePasswordButton
             // 
@@ -127,6 +136,7 @@
             this.DeletePasswordButton.TabIndex = 11;
             this.DeletePasswordButton.Text = "Delete";
             this.DeletePasswordButton.UseVisualStyleBackColor = false;
+            this.DeletePasswordButton.Click += new System.EventHandler(this.DeletePasswordButton_Click);
             // 
             // ModifyPasswordButton
             // 
@@ -138,6 +148,7 @@
             this.ModifyPasswordButton.TabIndex = 12;
             this.ModifyPasswordButton.Text = "Modify";
             this.ModifyPasswordButton.UseVisualStyleBackColor = false;
+            this.ModifyPasswordButton.Click += new System.EventHandler(this.ModifyPasswordButton_Click);
             // 
             // NotesLabel
             // 
@@ -238,17 +249,25 @@
             this.CurrProfileLabel.TabIndex = 22;
             this.CurrProfileLabel.Text = "PROFILENAME";
             // 
-            // PassworsListView
+            // PasswordsListView
             // 
-            this.PassworsListView.FullRowSelect = true;
-            this.PassworsListView.GridLines = true;
-            this.PassworsListView.HideSelection = false;
-            this.PassworsListView.Location = new System.Drawing.Point(590, 69);
-            this.PassworsListView.Name = "PassworsListView";
-            this.PassworsListView.Size = new System.Drawing.Size(467, 393);
-            this.PassworsListView.TabIndex = 23;
-            this.PassworsListView.UseCompatibleStateImageBehavior = false;
-            this.PassworsListView.View = System.Windows.Forms.View.Details;
+            this.PasswordsListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.FirstName,
+            this.LastName,
+            this.Password,
+            this.Email,
+            this.Website,
+            this.Notes});
+            this.PasswordsListView.FullRowSelect = true;
+            this.PasswordsListView.GridLines = true;
+            this.PasswordsListView.HideSelection = false;
+            this.PasswordsListView.Location = new System.Drawing.Point(590, 69);
+            this.PasswordsListView.Name = "PasswordsListView";
+            this.PasswordsListView.Size = new System.Drawing.Size(724, 393);
+            this.PasswordsListView.TabIndex = 23;
+            this.PasswordsListView.UseCompatibleStateImageBehavior = false;
+            this.PasswordsListView.View = System.Windows.Forms.View.Details;
+            this.PasswordsListView.SelectedIndexChanged += new System.EventHandler(this.PasswordsListView_SelectedIndexChanged);
             // 
             // LastNameLabel
             // 
@@ -280,17 +299,48 @@
             this.GeneratePassButton.TabIndex = 26;
             this.GeneratePassButton.Text = "Generate";
             this.GeneratePassButton.UseVisualStyleBackColor = true;
+            this.GeneratePassButton.Click += new System.EventHandler(this.GeneratePassButton_Click);
+            // 
+            // FirstName
+            // 
+            this.FirstName.Text = "First Name";
+            this.FirstName.Width = 100;
+            // 
+            // LastName
+            // 
+            this.LastName.Text = "Last Name";
+            this.LastName.Width = 100;
+            // 
+            // Password
+            // 
+            this.Password.Text = "Password";
+            this.Password.Width = 100;
+            // 
+            // Email
+            // 
+            this.Email.Text = "E-mail";
+            this.Email.Width = 140;
+            // 
+            // Website
+            // 
+            this.Website.Text = "Website";
+            this.Website.Width = 140;
+            // 
+            // Notes
+            // 
+            this.Notes.Text = "Notes";
+            this.Notes.Width = 140;
             // 
             // PasswordsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(1082, 653);
+            this.ClientSize = new System.Drawing.Size(1344, 653);
             this.Controls.Add(this.GeneratePassButton);
             this.Controls.Add(this.LastNameLabel);
             this.Controls.Add(this.LastNameTextBox);
-            this.Controls.Add(this.PassworsListView);
+            this.Controls.Add(this.PasswordsListView);
             this.Controls.Add(this.CurrProfileLabel);
             this.Controls.Add(this.ProfileLabel);
             this.Controls.Add(this.PasswordsLabel);
@@ -335,9 +385,15 @@
         private System.Windows.Forms.Label PasswordsLabel;
         private System.Windows.Forms.Label ProfileLabel;
         private System.Windows.Forms.Label CurrProfileLabel;
-        private System.Windows.Forms.ListView PassworsListView;
+        private System.Windows.Forms.ListView PasswordsListView;
         private System.Windows.Forms.Label LastNameLabel;
         private System.Windows.Forms.TextBox LastNameTextBox;
         private System.Windows.Forms.Button GeneratePassButton;
+        private System.Windows.Forms.ColumnHeader FirstName;
+        private System.Windows.Forms.ColumnHeader LastName;
+        private System.Windows.Forms.ColumnHeader Password;
+        private System.Windows.Forms.ColumnHeader Email;
+        private System.Windows.Forms.ColumnHeader Website;
+        private System.Windows.Forms.ColumnHeader Notes;
     }
 }

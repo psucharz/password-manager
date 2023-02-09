@@ -28,14 +28,14 @@ namespace Project_24_01_2023
             }
         }
 
-        public static void ModifyProfile(ProfileCredentials oldProfile, ProfileCredentials newProfile)
+        public static void ModifyProfile(ProfileCredentials profile)
         {
             using (IDbConnection idbc = new SQLiteConnection(LoadConnectionString()))
             {
                 idbc.Execute("UPDATE Profile SET FirstName = @FirstName, LastName = @LastName, ProfilePicture = @ProfilePicture," +
-                    "RecoveryQuestion = @RecoveryQuestion, RecoveryAnswer = @RecoveryAnswer, DateModified = @DateModified, LoginTimeout = @LoginTimeout, FailedLoginAttempts = @FailedLoginAttempts" +
-                    "WHERE FirstName = @oldFirstName AND LastName = @oldLastName",
-                    newProfile);
+                "RecoveryQuestion = @RecoveryQuestion, RecoveryAnswer = @RecoveryAnswer, DateModified = @DateModified, LoginTimeout = @LoginTimeout, FailedLoginAttempts = @FailedLoginAttempts " +
+                "WHERE Id = @Id",
+                profile);
             }
         }
 
@@ -43,11 +43,11 @@ namespace Project_24_01_2023
         {
             using (IDbConnection idbc = new SQLiteConnection(LoadConnectionString()))
             {
-                idbc.Execute("DELETE FROM Profile WHERE FirstName = @FirstName AND LastName = @LastName", profile);
+                idbc.Execute("DELETE FROM Profile WHERE Id = @Id", profile);
             }
         }
 
-        private static string LoadConnectionString(string id = "PassManager")
+        private static string LoadConnectionString(string id = "PassManagerDB")
         {
             return ConfigurationManager.ConnectionStrings[id].ConnectionString;
         }
@@ -56,7 +56,7 @@ namespace Project_24_01_2023
         {
             using (IDbConnection idbc = new SQLiteConnection(LoadConnectionString()))
             {
-                idbc.Execute("UPDATE Profile SET ProfilePicture = @picture WHERE FirstName = @ firstName AND LastName = @ lastName", new { picture, firstName = pC.FirstName, lastName = pC.LastName });
+                idbc.Execute("UPDATE Profile SET ProfilePicture = @picture WHERE Id = @Id", new { picture, Id = pC.Id });
             }
         }
     }

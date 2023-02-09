@@ -288,7 +288,7 @@
             // ProfilePhoto
             // 
             this.ProfilePhoto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ProfilePhoto.BackgroundImage")));
-            this.ProfilePhoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ProfilePhoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ProfilePhoto.Image = ((System.Drawing.Image)(resources.GetObject("ProfilePhoto.Image")));
             this.ProfilePhoto.Location = new System.Drawing.Point(665, 306);
             this.ProfilePhoto.Margin = new System.Windows.Forms.Padding(4);
