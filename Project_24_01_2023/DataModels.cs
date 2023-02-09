@@ -53,6 +53,7 @@ namespace Project_24_01_2023
         public byte[] ProfilePicture { get; set; }
         public string RecoveryQuestion { get; set; }
         public string RecoveryAnswer { get; set; }
+        public string RecoveryPassword { get; set; }
         public string DateModified { get; set; }
         public string LoginTimeout { get; set; }
         public long FailedLoginAttempts { get; set; }
@@ -61,7 +62,8 @@ namespace Project_24_01_2023
 
         public Profile() { }
 
-        public Profile(long id, string firstname, string lastname, string password, string recoveryQuestion, string recoveryAnswer) : base(password)
+        public Profile(long id, string firstname, string lastname, string password,
+            string recoveryQuestion, string recoveryAnswer, string recoveryPassword) : base(password)
         {
             Id = id;
             FirstName = firstname;
@@ -71,6 +73,7 @@ namespace Project_24_01_2023
             DateModified = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             LoginTimeout = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             FailedLoginAttempts = 0;
+            RecoveryPassword = recoveryPassword;
         }
 
         public void AddProfilePicture(Bitmap pfp)

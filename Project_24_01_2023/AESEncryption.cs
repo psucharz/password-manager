@@ -25,6 +25,7 @@ namespace Project_24_01_2023
             {
                 aes.Key = GenerateKey(password);
                 aes.IV = GenerateIV(password);
+                aes.Padding = PaddingMode.PKCS7;
 
                 ICryptoTransform encryptor = aes.CreateEncryptor(aes.Key, aes.IV);
 
@@ -51,6 +52,7 @@ namespace Project_24_01_2023
             {
                 aes.Key = GenerateKey(password);
                 aes.IV = GenerateIV(password);
+                aes.Padding = PaddingMode.PKCS7;
 
                 ICryptoTransform decryptor = aes.CreateDecryptor(aes.Key, aes.IV);
 

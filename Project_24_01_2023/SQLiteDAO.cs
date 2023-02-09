@@ -22,8 +22,8 @@ namespace Project_24_01_2023
         {
             using (IDbConnection idbc = new SQLiteConnection(LoadConnectionString()))
             {
-                idbc.Execute("INSERT INTO Profile (FirstName, LastName, ProfilePicture, Password, RecoveryQuestion, RecoveryAnswer, DateModified, LoginTimeout, FailedLoginAttempts) " +
-                "VALUES (@FirstName, @LastName, @ProfilePicture, @Password, @RecoveryQuestion, @RecoveryAnswer, @DateModified, @LoginTimeout, @FailedLoginAttempts)",
+                idbc.Execute("INSERT INTO Profile (FirstName, LastName, ProfilePicture, Password, RecoveryQuestion, RecoveryAnswer, RecoveryPassword, DateModified, LoginTimeout, FailedLoginAttempts) " +
+                "VALUES (@FirstName, @LastName, @ProfilePicture, @Password, @RecoveryQuestion, @RecoveryAnswer, @RecoveryPassword, @DateModified, @LoginTimeout, @FailedLoginAttempts)",
                 profile);
             }
         }
@@ -33,7 +33,7 @@ namespace Project_24_01_2023
             using (IDbConnection idbc = new SQLiteConnection(LoadConnectionString()))
             {
                 idbc.Execute("UPDATE Profile SET FirstName = @FirstName, LastName = @LastName, ProfilePicture = @ProfilePicture," +
-                "RecoveryQuestion = @RecoveryQuestion, RecoveryAnswer = @RecoveryAnswer, DateModified = @DateModified, LoginTimeout = @LoginTimeout, FailedLoginAttempts = @FailedLoginAttempts " +
+                "RecoveryQuestion = @RecoveryQuestion, RecoveryAnswer = @RecoveryAnswer, RecoveryPassword = @RecoveryPassword, DateModified = @DateModified, LoginTimeout = @LoginTimeout, FailedLoginAttempts = @FailedLoginAttempts " +
                 "WHERE Id = @Id",
                 profile);
             }

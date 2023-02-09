@@ -54,8 +54,9 @@ namespace Project_24_01_2023
             {
                 string encPass = AESEncryption.Encrypt(PasswordTextBox.Text, PasswordTextBox.Text);
                 string encAns = AESEncryption.Encrypt(RecAnswerTextBox.Text, RecAnswerTextBox.Text);
+                string encRecPass = AESEncryption.Encrypt(PasswordTextBox.Text, RecAnswerTextBox.Text);
                 Profile pC = new Profile(0, FirstNameTextBox.Text, LastNameTextBox.Text, encPass,
-                    RecQuestionsComboBox.Text, encAns);
+                    RecQuestionsComboBox.Text, encAns, encRecPass);
                 ProfilesDAO.SetProfile(pC);
                 LoadProfiles();
             }
@@ -81,8 +82,9 @@ namespace Project_24_01_2023
                 else
                 {
                     string encAns = AESEncryption.Encrypt(RecAnswerTextBox.Text, RecAnswerTextBox.Text);
+                    string encRecPass = AESEncryption.Encrypt(decPass, RecAnswerTextBox.Text);
                     Profile profile = new Profile(selectedProfile.Id, FirstNameTextBox.Text, LastNameTextBox.Text, "",
-                    RecQuestionsComboBox.Text, encAns);
+                    RecQuestionsComboBox.Text, encAns, encRecPass);
                     ProfilesDAO.ModifyProfile(profile);
                     LoadProfiles();
                 }
@@ -183,20 +185,28 @@ namespace Project_24_01_2023
             if (ProfilesComboBox.SelectedIndex > -1)
             {
                 Profile selectedProfile = (Profile)ProfilesComboBox.SelectedItem;
-                string decPass = AESEncryption.Decrypt(selectedProfile.Password, Password2TextBox.Text);
-                if (Password2TextBox.Text != decPass)
+                try
+                {
+                    string decPass = AESEncryption.Decrypt(selectedProfile.Password, Password2TextBox.Text);
+                    if (Password2TextBox.Text != decPass)
+                    {
+                        selectedProfile.TimeOutLogin();
+                        MessageBox.Show("Provided password is incorrect.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else if (DateTime.Parse(selectedProfile.LoginTimeout) > DateTime.Now)
+                    {
+                        MessageBox.Show("Too many login attempts. Try again later.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        PasswordsForm passwordsForm = new PasswordsForm(selectedProfile);
+                        passwordsForm.ShowDialog();
+                    }
+                }
+                catch (System.Security.Cryptography.CryptographicException)
                 {
                     selectedProfile.TimeOutLogin();
                     MessageBox.Show("Provided password is incorrect.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else if (DateTime.Parse(selectedProfile.LoginTimeout) > DateTime.Now)
-                {
-                    MessageBox.Show("Too many login attempts. Try again later.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    PasswordsForm passwordsForm = new PasswordsForm(selectedProfile);
-                    passwordsForm.ShowDialog();
                 }
             }
         }
@@ -211,7 +221,7 @@ namespace Project_24_01_2023
                 Profile selectedProfile = (Profile)ProfilesComboBox.SelectedItem;
                 string decAns = AESEncryption.Decrypt(selectedProfile.RecoveryAnswer, RecAnswer2TextBox.Text);
                 if(selectedProfile.RecoveryQuestion == RecQuestion2ComboBox.Text && decAns == RecAnswer2TextBox.Text)
-                    Password2TextBox.Text = selectedProfile.Password;
+                    Password2TextBox.Text = AESEncryption.Decrypt(selectedProfile.RecoveryPassword, decAns);
                 else
                     MessageBox.Show("Recovery answers either not set or incorrect", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
